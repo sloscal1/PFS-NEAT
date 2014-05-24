@@ -14,7 +14,8 @@ The Predictive Feature Selection embedded in NEAT project gives implementations 
 
 #Licensing#
 PFS-NEAT is an implementation of the Predictive Feature Selection Framework, with an implementation embedded in NEAT.
-2014  Steven Loscalzo
+
+2014  Steven Loscalzo (sloscalzo85@gmail.com)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -43,12 +44,14 @@ Where <1> is one of {FS, FD, SAFS, PFS}, and <2> is RARS or DPB. To run NEAT, om
 When the script terminates, you will find a directory called Output, and there will be a .txt file inside a few more directories that corresponds to the output of the run.  Since these algorithms are stochastic, general performance values should be obtained by running these algorithms many times and averaging the results.
 
 #Contents#
-* `src` Self-explanatory, check out the javadocs for more details.
-* `lib` Also self-explanatory, these are all freely available on the web, but included here for ease-of-use.
-* `properties` Contains template properties files for running all combinations of input 
-* `tracks` Contains track descriptions for the RARS environment. The publications describing PFS-NEAT and SAFS-NEAT use fiorano, but clkwis is another popular choice in related work.
-* `run.bash` Is a simple script to help demonstrate how to run these algorithms.
-* `README.md` Is this file!
+* `src` self-explanatory, check out the javadocs for more details.
+* `lib` also self-explanatory, these are all freely available on the web, but included here for ease-of-use.
+* `properties` contains template properties files for running all combinations of input 
+* `tracks` contains track descriptions for the RARS environment. The publications describing PFS-NEAT and SAFS-NEAT use fiorano, but clkwis is another popular choice in related work.
+* `DPB_transitions` contains trajectory data for the JAAMASSensors and Stored irrelevant sensor types for the DPB environment(see below).
+* `RARS_transitions` same as `DPB_transitions` except for the RARS environment.
+* `run.bash` is a simple script to help demonstrate how to run these algorithms.
+* `README.md` is this file!
 
 #Properties File Descriptions#
 Each properties file contains a list of key value pairs written like `key=value`, one per line. Most of the properties hail from ANJI, and you should consult that documentation for more detailed descriptions on how to set those values. Here we will describe the new properties that we have added or must be altered for our methods:
@@ -64,11 +67,30 @@ Each properties file contains a list of key value pairs written like `key=value`
 * `persistence.class` should be set to `mil.af.rl.anji.FilePersistence` for all algorithms.
 
 ##Environment specific parameters##
-* `dpb.feature.type` controls what type of additional features will be used in the DPB environment. Note that in both environments, there is a hard-coded number of relevant sensors (6 for DPB, 10 for RARS), and if `subspace.features` is larger than that number, then the feature type value will determine how the rest of those features are set. Valid options are `mil.af.rl.problem.DoublePoleBalance$JAAMASSensors` which are those as described in the PFS-NEAT publication, `mil.af.rl.problem.LaggedSensors` which copy the values of the relevant sensors from 5 time steps previous (0 in the first 5 time steps), `mil.af.rl.problem.DoublePoleBalance$RandomFeature` which are clipped Gaussian random sensors with mean 0.5 and std 0.25, but only report values in [0,1], and `mil.af.rl.problem.DoublePoleBalance$Stored` which replay values from a previously run policy in the environment. This is faster than actually running the other agents in the environment during learning.
+Each environment has a few specific parameters, and only need to be included if that environment is the focus of a given properties file. Key prefixes denote which environment each parameter is used in.
+* `dpb.feature.type` controls what type of additional features will be used in the DPB environment. Note that in both environments, there is a hard-coded number of relevant sensors (6 for DPB, 10 for RARS), and if `subspace.features` is larger than that number, then the feature type value will determine how the rest of those features are set. Valid options are `mil.af.rl.problem.DoublePoleBalance$JAAMASSensors` which are those as described in the PFS-NEAT publication, `mil.af.rl.problem.DoublePoleBalance$LaggedSensors` which copy the values of the relevant sensors from 5 time steps previous (0 in the first 5 time steps), `mil.af.rl.problem.DoublePoleBalance$RandomFeature` which are clipped Gaussian random sensors with mean 0.5 and std 0.25, but only report values in [0,1], and `mil.af.rl.problem.DoublePoleBalance$Stored` which replay values from a previously run policy in the environment. This is faster than actually running the other agents in the environment during learning.
 * `dpb.feature.type.storedpath` is the file where JAAMASSenors and Stored sensors will look for the previous values (set to DPB_transitions in this work).
-* 
+* `rars.args.track` is the name of the track file (from the `tracks` directory) to use.
+* `rars.args.trackPath` is the path to the tracks directory.
+* `rars.features.relevant` is the number of rangefinder sensors to use. Set to 9 in all PFS and SAFS publications.
+* `rars.features.redundant` is not used in this work and should be removed in a future release.
+* `rars.features.irrelevant` is the number of additional features to use.
+* `rars.feature.type` is the kind of additional feature to use. The types are the same as for DPB, but are based from `mil.af.rl.problem.rars.SimpleRars$`.
+* `rars.feature.type.storedpath` is used the same way as in DPB, and should point to the `RARS_transitions` file.
+
+##FD-NEAT specific parameters##
+* `remove.connection.mutation.rate` should be in the range (0,1).
+* `initial.topology.fully.connected` should be set to true.
+* `add.connection.class` can be set to either `com.anji.neat.AddConnectionMutationOperatorNoInput` or `...AddConnectionMutationOperatorFixed` (results will vary, the former was used in the PFS-NEAT publication).
+
+##FS-NEAT specific parameters##
+* `add.connection.mutation.rate` should be in the range (0,1).
+* `initial.topology.fully.connected` should be set to false.
+* `add.connection.class` must be set to `mil.af.rl.anji.AddConnectionMutationOperatorFixed`.
+
+##SAFS-NEAT specific parameters##
+
+##PFS-NEAT specific parameters##
 
 
-
-
-
+Enjoy!
