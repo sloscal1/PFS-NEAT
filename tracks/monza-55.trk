@@ -1,0 +1,67 @@
+19             NSEG - the number of track segments
+7500  5700     X_MAX, Y_MAX - maximum value of X, Y to be displayed, feet
+90.0           width - width of race course, feet
+
+5700  500   2.88 TRK_STRT_X, _Y - coordinates of right rail starting point, feet
+5750  5400  SCORE_BOARD_X, _Y - coordinates of scoreboard upper left corner
+4200  4800  LDR_BRD_X, _Y     - coordinates of leader board upper left corner
+2000  5000  IP_X, IP_Y        - coordinates of Instrument Panel up. lft corner
+350   150   LOTIX, LOTIY      - coordinates of start of track length message
+.5    2     FINISH            - fraction of 1st segment prior to finish line
+
+1
+31500 32500
+500   800
+80
+
+0          3263.7275 - 1.  Start/finish straight
+-1037.3941 3.1702217 - 2.  Curva Nord alta velocita (North Curve banking)
+0          3777.7937 - 3.  East straight
+-1037.3941 3.112964  - 4.  South Curve on banking
+0          5246.1385 - 5.
+-1010.7430 1.377343  - 6.  Curva Grande
+0          1002.4981 - 7.
+599.6498   0.260431  - 8.  Curve della Roggia
+0          1339.8857 - 9. 
+-326.4733  1.879638  - 10. Curve di Lesmo (Lesmo one)
+0          602.0448  - 11. 
+-333.1055  1.183567  - 12. Lesmo two.
+0          597.8206  - 13.
+1966.8513  0.253061  - 14. Serraglio
+0          2088.4826 - 15. Track goes under the banked curve.
+1005.8526  0.784414  - 16. Vialone
+0          3100.2693 - 17.
+-273.4403  2.376590  - 18. Parabolica
+-1019.4046 0.763953  - 19.
+
+  radius, length - NSEG repetitions of segment radius, length.
+  radius, length   (0 radius means a straightaway, with length
+  radius, length    in feet.  Length of curves is in radians.
+  radius, length    Negative radius denotes right turn.)
+
+This is MONZA-55.TRK,
+by Ferdinand Trauttmansdorff <ao984@freenet.carleton.ca>,
+August 11, 1995.
+
+The track file is nearly to scale and the length is accurate.
+
+This is the MONZA Autodrome in the same configuration that appeared
+in the John Frankenheimer film "GRAND PRIX", starring James Garner.
+The movie, filmed during the 1966 Formula One season, contains awesome
+in-car footage of the old MONZA track.
+
+The original MONZA road circuit was built in 1922.  The 4.25km high speed
+oval, with its two steeply banked curves (38 degrees!!), was added in 1955.
+At the same time, the road circuit was shortened from its previous 6.3km
+down to 5.75km.  The Porfido curve, originally extending out past the South
+curve of the oval, was eliminated.  The track was shortened to bring the
+curve into the infield of the oval.  The resulting new infield curve was
+named Parabolica.
+
+The high speed oval was very bumpy.  That, combined with the high g-forces
+imposed on cars by the 38-degree banking, caused a lot of suspension
+failures.  The oval was only used for a few short years and then it fell
+into disrepair and was abandoned.
+
+The combined 1955 circuit, road course and oval, measured 10km exactly.
+

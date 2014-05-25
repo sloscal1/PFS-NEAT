@@ -1,0 +1,31 @@
+ 8                NSEG - the number of track segments
+ 1650 970         X_MAX, Y_MAX - maximum value of X, Y to be displayed, feet
+ 100              width - width of race course, feet
+
+ 570   980 0  TRK_STRT_X, _Y    - coordinates of outer rail starting point, feet
+ 850   920   SCORE_BOARD_X, _Y - coordinates of scoreboard upper left corner
+ 210   640   LDR_BRD_X, _Y     - coordinates of leader board upper left corner
+ 1100  300   IP_X, IP_Y        - coordinates of Instrument Panel up. lft corner
+ 550   1160  LOTIX, LOTIY      - coordinates of start of track length message
+ 0.8   1   FINISH            - fraction of 1st segment prior to finish line
+
+ -1
+ 3100  3600
+ 100   300
+ 60
+
+ 0   750        radius, length - NSEG repetitions of segment radius, length.
+ -200  2.70526  radius, length   (0 radius means a straightaway, with length
+ 0    1103.3779 radius, length    in feet.  Length of curves is in radians.
+ -200  2.007129 radius, length    Negative radius denotes right turn.)
+ 0    216.3077           .
+ -150  1.570796          .
+ 150  1.570796           .
+ -150  1.570796          .
+
+This is a track definition file.  The computer will only read the above
+lines, so any kind of commentary can go down here.  Also, the
+computer only reads one or two numbers from the beginning of each
+line and then ignores the rest of the line.
+
+This is CLKWIS.TRK, by Mitchell Timin, April, 1995

@@ -1,0 +1,74 @@
+41 
+5550	4200 
+80 
+ 
+1830	750	0	Start of track 
+2200	3800		Scoreboard 
+200	3300		Leaderboard 
+4000	900		Instrument Panel 
+1500	100		Length of Track 
+0.1     2 
+ 
+1 
+15600  10 
+800 1000 
+40 
+ 
+0	1387		Start/finish straight 
+1000	21		(Pit exit) 
+0	920 
+140	85		Tamburello 
+-28	78		| 
+0	267		| 
+150	52		| 
+0	1392 
+303	50		Villeneuve 
+-144	81		| 
+0	702 
+136	149.5		Tosa hairpin 
+0	1086 
+-637	28 
+0	455 
+152	98		Piratella 
+0	411 
+414	21.5 
+0	730 
+-111	44		Acque Minerale 
+0	167		| 
+-45	78		| 
+0	425 
+247	25.5 
+0	1364 
+-28	76		Variante Alta 
+102	97		| 
+0	752 
+292	40 
+-2330	13 
+-557	20 
+0	495 
+121	91		Rivazza 1 
+0	256 
+113	84		Rivazza 2 
+0	724 
+-278	33 
+0	535 
+130	68.5		Variante Bassa (Pit entrance) 
+0	27		| 
+-69	72		| 
+ 
+The Imola Circuit used for the San Marino Grand Prix. 
+Made by Torben Thellefsen (torben@dir.dk) from the Tyrrell circuit map from 
+1996. 
+Panels were placed using the Linux version of RARS. 
+ 
+Total length: 3.04 miles. 
+ 
+The length is quite accurate but I had to adjust some of the straights 
+to achieve that precision, so it's not perfect to scale. 
+It's pretty close, though. 
+This track file uses the actual start/finish straight. 
+ 
+Apart from Acque Minerale, there doesn't seem to be any problem areas 
+on this track. Quite easy, actually. 
+ 
+

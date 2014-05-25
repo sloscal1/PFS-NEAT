@@ -1,0 +1,27 @@
+6            NSEG   
+2300 1400    MAX_X, _Y   
+60.0         width   
+   
+500     150  0 TRK_STRT_X, _Y, _ANG   
+1100    1000   SCOREBOARD   
+300     800    LEADERBOARD   
+1600    1600   IP   
+1200     50    LENGTH OF TRACK message   
+.5       2     FINISH, START_ROWS   
+   
+-1         PIT_SIDE   
+2800 4800  PIT_ENTRY, PITLANE_START   
+500 1400   PITLANE_END, PIT_EXIT   
+40         PITLANE_SPEED   
+   
+0 1329   
+354  140   
+0 553   
+802 60   
+0 536   
+482 160    
+   
+PHOENIX, Arizona, USA.   
+By Maido REMM, mremm@ebc.ee,   
+23.03.1997   
+

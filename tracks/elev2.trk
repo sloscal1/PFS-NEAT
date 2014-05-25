@@ -1,0 +1,57 @@
+32
+6200    2500
+80
+
+4350    820   3.14     Start of track, start angle
+4900    4400            Scoreboard
+2000    4500            Leaderboard
+200     4500            Instrument Panel
+2500    1300            Length of Track
+0.38    2               FINISH,START_ROWS
+
+1              PIT_SIDE +1 is right, -1 is left     
+16000 16600    PIT_ENTRY, PITLANE_START
+600 700        PITLANE_END, PIT_EXIT
+60             PITLANE_SPEED - feets per sec.
+
+0       2375            Start/finish straight
+-20     161
+100     181
+0       485
+-830    81
+-85     180
+0       215
+255     232
+0       400
+-360    64.5
+
+-1000   85
+-200    70
+500     42.5
+0       85
+-330    83
+1000    30
+-420    53
+350     39
+100     130
+
+570     48
+-105    60.5
+-3055   54
+-30     76.5
+130     76.5
+0       545
+-180    31
+-760    68
+0       230
+-195    131
+90      108.5
+0       360
+-1000   45
+
+Fantasy track based on the Albert Park Circuit.
+
+Doug Eleveld <deleveld@dds.nl>
+
+
+

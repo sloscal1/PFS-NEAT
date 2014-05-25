@@ -1,0 +1,46 @@
+29                NSEG - the number of track segments
+4500   4300        X_MAX, Y_MAX - maximum value of X, Y to be displayed, feet
+75.00             width - width of race course, feet
+
+5500   2400  -1.5 TRK_STRT_X, _Y - coordinates of right rail starting point, feet
+2200   2500     SCORE_BOARD_X, _Y - coordinates of scoreboard upper left corner
+2900   4250     LDR_BRD_X, _Y     - coordinates of leader board upper left corner
+100    1000     IP_X, IP_Y        - coordinates of Instrument Panel up. left corner
+3200   100      LOTIX, LOTIY      - coordinates of start of track length message
+0.8    2        FINISH            - fraction of 1st segment prior to finish line
+
+1
+15000   16200
+100     700
+60
+
+     0.000000   1444.500000
+  -397.500000      1.649336
+     0.000000   1302.000010
+   375.000000      0.558505
+  -337.500000      1.256637
+   450.000000      1.239184
+  -337.500000      1.727876
+   375.000000      0.610865
+     0.000000   2335.500000
+  -225.000000      2.670354
+     0.000000     75.000000
+   300.000000      0.994838
+ -2175.000000      0.401426
+   165.000000      1.832596
+  -225.000000      3.089233
+     0.000000   1167.750010
+   450.000000      0.785398
+     0.000000    907.500000
+  -207.000000      1.082104
+     0.000000    703.500008
+   187.500000      1.884956
+     0.000000    352.500000
+   187.500000      1.902409
+     0.000000    179.999999
+  -150.000000      1.692969
+     0.000000    119.999999
+  -150.000000      1.500983
+     0.000000    300.000000
+  -732.000000      1.029744
+

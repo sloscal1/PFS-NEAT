@@ -1,0 +1,33 @@
+10                   NSEG - the number of track segments
+2100 1500            X_MAX, Y_MAX - maximum value of X, Y to be displayed, feet
+110.0                width - width of race course, feet
+
+530     90      0       TRK_STRT_X, _Y, _ANG
+1600    1500            SCORE_BOARD_X, _Y 
+450     1000            LDR_BRD_X, _Y     
+400     550             IP_X, IP_Y        
+1000    300             LOTIX, LOTIY    
+.8      3               FINISH, SR
+
+1
+4000    4500
+-50     170           
+60
+
+0         1310.0   radius, length - NSEG repetitions of segment radius, length.
+226.436   2.9      radius, length   (0 radius means a straightaway, with length
+-1400      .95     radius, length    in feet.  Length of curves is in radians.
+226.436   2.107129 radius, length    Negative radius denotes right turn.)
+0         561.37            .
+163.22    1.0               .
+-216.092   1.3              .
+201.149   2.07            etc.
+0         252.5           
+352.874   .54   
+
+This is a track definition file.  The computer will only read the above
+lines, so any kind of commentary can go down here.  Also, the
+computer only reads one or two numbers from the beginning of each
+line and then ignores the rest of the line.
+
+This is V03.TRK, by Mitchell Timin, March, 1995

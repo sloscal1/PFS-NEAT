@@ -1,0 +1,52 @@
+20                      Number of segments
+3600    2840            Bounding box, feet
+80                      Width of track
+
+620     2710    0       Track outer rail start (X,Y)
+900     2200            Scoreboard
+1800    1800            Leaderboard
+400     900             Instrument panel
+500     2400            Length of track message
+0.27    2               Finish line. Fraction of first straight.
+
+-1
+9000    10000
+800     1000
+60
+
+0       1075            Start/finish straight
+-310    33              Folly Curve
+0       930
+-527    18
+0       155             Avon Rise
+390     43
+0       186
+-155    129             Quarry Corner
+0       1770            Farm Straight
+-233    49              Old Paddock Bend
+0       546
+1398    24              Hammerdown
+0       248
+-372    22              | Tower Corner
+-279    30              |
+-140    52              |
+0       1306
+-279    22              Westway
+0       920             Dean Straight
+-217    72              Camp Corner
+
+CASTLE COMBE CIRCUIT
+Torben Thellefsen, 8th November 1996
+Map obtained from http://www.bath.ac.uk/~py3dlg/tracks.html
+
+Well, at least the length is accurate and the circuit looks a lot like
+the real one - I'm sure that I haven't got all the details right in 
+e.g.
+Quarry and Tower Corners.
+Oh well, this track should be a challenge to most cars just the same.
+Watch your lines through the many bends and Tower Corner. And how are
+you doing in Avon Rise/Quarry? Another thing to watch out for is all
+those other cars who tend to get in the way :-/
+On this relatively high-speed track it's very important to finish the
+curves in balance to get the best speed for the next straight.
+

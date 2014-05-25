@@ -1,0 +1,55 @@
+25                NSEG - the number of track segments 
+4500 3300         X_MAX, Y_MAX - maximum value of X, Y to be displayed, feet 
+100               width - width of race course, feet 
+ 
+250   2620 .6 TRK_STRT_X,_Y  - coordinates of outer rail starting point, feet 
+1000  2500   SCORE_BOARD_X, _Y - coordinates of scoreboard upper left corner 
+2300  1700   LDR_BRD_X, _Y     - coordinates of leader board upper left corner 
+2200  3200   IP_X, IP_Y        - coordinates of Instrument Panel up. lft corner 
+50    100    LOTIX, LOTIY      - coordinates of start of track length message 
+.5    2      FINISH            - fraction of 1st segment prior to finish line 
+ 
+1 
+12200 13300 
+500 1000 
+40 
+ 
+0          946.5465  -  1st seg. Actual Start/Finish. (Bottom/right of screen) 
+-393.8841  1.787797  -  2.  Turn 1 drops to the right. 
+0          997.0533  -  3.  Slight climb. 
+472.6609   2.002812  -  4.  Turn 2, blind apex. Drops steeply! Very scary! 
+0          644.4296  -  5.  Big compression load at bottom of hill. 
+-281.3458  1.517420  -  6.  Turn 3a. 
+-540.1838  0.920089  -  7.  Turn 3b. 
+0          1022.3215 -  8. 
+375.8779   1.129043  -  9.  Turn 4, again dropping left 
+0          418.0661  - 10.  Hard braking.  Ends in sudden very steep climb. 
+-92.2814   1.738439  - 11.  Turn 5a. 
+0          135.4809  - 12.  Moss Corner (hairpin) 
+-31.5107   1.343121  - 13.  Turn 5b. Good exit is crucial for fast lap time. 
+0          351.7535  - 14. 
+794.5204   0.411341  - 15.  Turn 5c.  Start of long climb up back straightaway. 
+0          981.8953  - 16.  
+-1874.8881 0.138635  - 17.  Turn 6. 
+0          710.0236  - 18. 
+-1874.8881 0.253322  - 19.  Turn 7, and onto Mario Andretti straight. 
+0          842.7757  - 20.  F1 cars used to spin wheels cresting the risehere. 
+-472.6609  1.784535  - 21.  Turn 8.  Very fast. 
+0          177.6171  - 22.  Short braking area and into the Esses. 
+319.6088   1.227772  - 23.  Turn 9 
+0          216.3856  - 24.  Pit entrance to the right. 
+-168.8075  1.570796  - 25.  Turn 10 and back onto front straight. 
+  radius, length - NSEG repetitions of segment radius, length. 
+  radius, length   (0 radius means a straightaway, with length 
+  radius, length    in feet.  Length of curves is in radians. 
+  radius, length    Negative radius denotes right turn.) 
+ 
+ 
+This is MOSPORT.TRK, 
+by Ferdinand Trauttmansdorff <ao984@freenet.carleton.ca>, 
+June 19, 1995. 
+ 
+It is not exactly to scale, but the length is pretty close. 
+It is too bad that RARS tracks do not yet accommodate elevation changes. 
+MOSPORT is famous for its intimidating long dropping curves. 
+

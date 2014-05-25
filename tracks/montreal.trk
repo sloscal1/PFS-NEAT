@@ -1,0 +1,70 @@
+41                NSEG - the number of track segments   
+5800  500         X_MAX, Y_MAX - maximum value of X, Y to be displayed, feet   
+125               width - width of race course, feet   
+   
+3700  1800 -.5 TRK_STRT_X, _Y  - coordinates of right rail starting point, feet   
+4500  4000     SCORE_BOARD_X, _Y - coordinates of scoreboard upper left corner   
+150   1500     LDR_BRD_X, _Y     - coordinates of leader board upper left corner   
+2000  2200     IP_X, IP_Y        - coordinates of Instrument Panel up. lft corner   
+1000  4000     LOTIX, LOTIY      - coordinates of start of track length message   
+.7    2         FINISH            - fraction of 1st segment prior to finish line   
+   
+-1   
+13220  14220   
+200    500   
+60   
+    
+   
+0        1383.0784   - 1  Current Start/Finish straight and new pits/garages   
+-478.50  0.741947    - 2   
+0        144.4897    - 3   
+239.25   1.380861    - 4   
+0        115.2062    - 5   
+-63.80   2.283146    - 6  Senna Corner (West Hairpin)   
+-478.50  0.772938    - 7   
+0        602.3252    - 8   
+-79.75   1.325313    - 9  (Corner where J.P. Jabouille's career ended)   
+382.80   1.092292    - 10   
+0        583.3343    - 11 (For better screen fit, RARS startline moved here.)   
+-319.00  0.978291    - 12   
+0        168.4892    - 13   
+319.00   1.747089    - 14   
+0        63.1979     - 15   
+-79.75   1.35607     - 16   
+0        185.9222    - 17   
+-1435.50 0.14353     - 18   
+0        589.1579    - 19   
+-1435.50 0.317753    - 20   
+0        647.3076    - 21  Concorde Bridge   
+-79.75   1.26738     - 22     
+0        39.5300     - 23   
+239.25   1.335311    - 24   
+0        606.9444    - 25   
+1754.50  0.175474    - 26   
+0        250.6728    - 27   
+1754.50  0.315194    - 28   
+0        144.1432    - 29  275 km/h (170 mph) Awesome braking for hairpin!   
+-15.95   3.141593    - 30  East Hairpin   
+0        397.6126    - 31  (I always sit here.)   
+319.00   0.554811    - 32   
+-319.00  0.554811    - 33   
+0        1164.3500   - 34  Old start/finish straight (Temporary chicane omitted)   
+-255.20  0.747512    - 35   
+319.00   1.36989     - 36  Casino Bend   
+-159.50  0.674279    - 37   
+0        1211.7087   - 38   
+-31.90   1.032078    - 39  Chicane at Pit entrance   
+0        78.8084     - 40   
+319.00   1.083979    - 41   
+  radius, length - NSEG repetitions of segment radius, length.   
+  radius, length   (0 radius means a straightaway, with length   
+  radius, length    in feet.  Length of curves is in radians.   
+  radius, length    Negative radius denotes right turn.)   
+   
+   
+This is MONTREAL.TRK,   
+by Ferdinand Trauttmansdorff <ao984@freenet.carleton.ca>,   
+June, 19 1995.   
+It is not exactly to scale, but the length is pretty close.   
+   
+

@@ -1,0 +1,30 @@
+6                     NSEG - the number of track segments 
+4850 3500             X_MAX, Y_MAX - maximum value of X, Y to be displayed, 
+110                   width - width of race course, feet 
+ 
+720   200  0.6  TRK_STRT_X, _Y    - coordinates of outer rail starting point, 
+3800  1400      SCORE_BOARD_X, _Y - coordinates of scoreboard upper left corner 
+600   3000      LDR_BRD_X, _Y     - coordinates of leader board upper left 
+1800  800       IP_X, IP_Y        - coordinates of Instrument Panel up. lft 
+2100  3100      LOTIX, LOTIY      - coordinates of start of track length message 
+.5    2         FINISH  SR        - fraction of 1st segment prior to finish line 
+ 
+-1 
+11500 13000  
+1800  3000 
+60 
+ 
+0 4775 
+352 2.5511 
+0 3757 
+365 1.4420 
+0 2585 
+441 2.2901 
+ 
+This track has the same shape as the NASCAR track at Pocono, PA. 
+The shape and length is accurate, but the width was arbitrarily set. 
+ 
+                                        - Christopher Lund 
+                                          12 May 1997 
+ 
+

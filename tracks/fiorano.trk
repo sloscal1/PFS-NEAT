@@ -1,0 +1,62 @@
+29             NSEG - the number of track segments      This is FIORANO2.TRK.
+2450  1750     X_MAX, Y_MAX - maximum value of X, Y to be displayed, feet
+80.0           width - width of race course, feet
+
+ 640    480     0.6 TRK_STRT_X,_Y       Track placement
+ 340    1760        SCORE_BOARD_X,_Y    scoreboard upper left corner
+1750    750         LDR_BRD_X,_Y        leader board upper left corner
+ 900    1800        IP_X, IP_Y          Instrument Panel up. lft corner
+ 300    50          LOTIX, LOTIY        track length message
+0.8     2           FINISH              finish line
+
+1
+8500    9000
+200     300
+80
+
+0          1697.2734 - 1. Start/Finish straight (underpass)
+481.8470   0.446358  - 2.
+0          158.2362  - 3.
+-27.5438   2.962339  - 4.
+0          208.9221  - 5. 
+192.7387   0.985432  - 6.
+-203.4465  2.476980  - 7.
+0          151.4762  - 8.
+214.1542   0.931626  - 9.
+481.8470   0.769043  - 10.
+0          403.9798  - 11.
+-299.8159  0.811645  - 12.
+-53.5386   1.005965  - 13.
+-74.9540   0.847934  - 14.
+0          799.4502  - 15. (overpass)
+-117.7848  1.669066  - 16.
+0          116.8708  - 17.
+910.1554   0.404349  - 18.
+0          418.5528  - 19.
+89.3331    3.141593  - 20. tight hairpin
+0          126.2979  - 21.
+-1659.6951 0.430660  - 22.
+428.3084   0.955090  - 23.
+-1659.6951 0.457462  - 24.
+0          221.3539  - 25.
+96.3694    2.082547  - 26.
+192.7388   1.265603  - 27.
+0          240.4471  - 28.
+-642.4626  0.319591  - 29.
+
+  radius, length - NSEG repetitions of segment radius, length.
+  radius, length   (0 radius means a straightaway, with length
+  radius, length    in feet.  Length of curves is in radians.
+  radius, length    Negative radius denotes right turn.)
+
+by Ferdinand Trauttmansdorff <ao984@freenet.carleton.ca>,
+June 24, 1995.
+
+FIORANO is Ferrari's test track near Maranello, Italy.  It is a very
+good circuit for proving out new designs because it has a fairly fast
+straightaway, some difficult combinations of increasing radius and
+decreasing radius curves, and hairpins to the right and left.  The
+track crosses over itself with a bridge so that the circuit is
+neither predominantly clockwise or counter-clockwise.
+
+The track file is nearly to scale and the length is accurate.

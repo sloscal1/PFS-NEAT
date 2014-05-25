@@ -1,0 +1,30 @@
+4
+2200 800
+100.0
+
+750     800     -.76    Track position
+1000    1550            Scoreboard
+100     1500            Leaderboard
+1600    1500            Instruments
+700     50              Track length & name
+.8      4               Finish lane, start rows
+
+-1
+4300    5090
+100     200
+40
+
+0 790
+443  4.712389
+0 790
+-343  4.712389
+
+
+FIGURE8.TRK
+
+I know this is far from perfect.  Maybe someone who knows about programming
+can clean this up.  I think this track could be alot of fun.
+
+Robert Skupinski, 7/21/95, sesku@chester.lerc.nasa.gov
+
+

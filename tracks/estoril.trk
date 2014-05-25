@@ -1,0 +1,58 @@
+23             NSEG - the number of track segments 
+1000  2850     X_MAX, Y_MAX - maximum value of X, Y to be displayed, feet 
+80.0           width - width of race course, feet 
+ 
+350   1000 0.6 TRK_STRT_X, _Y, _ANG - coordinates of right rail seg 0 
+525   2700     SCORE_BOARD_X, _Y - coordinates of scoreboard upper left corner 
+2750  1100     LDR_BRD_X, _Y     - coordinates of leader board upper left corner 
+1250  2800     IP_X, IP_Y        - coordinates of Instrument Panel up. lft corner 
+400   600      LOTIX, LOTIY      - coordinates of start of track length message 
+.5    2        FINISH,START_ROWS - fraction of 1st segment prior to finish line 
+ 
+1              PIT_SIDE +1 is right, -1 is left      
+12500 14000    PIT_ENTRY, PITLANE_START 
+500 700        PITLANE_END, PIT_EXIT 
+40             PITLANE_SPEED - feets per sec. 
+ 
+0          2985.5375 -  1. Start/finish is halfway down this long straight. 
+-378.9002  1.570796  -  2. 
+0          411.6831  -  3. 
+-303.1201  1.696097  -  4. 
+0          691.0880  -  5. 
+-106.0920  2.686232  -  6. 
+0          561.9164  -  7. 
+121.2481   3.040526  -  8. 
+0          739.2347  -  9. 
+-378.9002  0.517582  - 10. 
+0          1351.4778 - 11. 
+199.3851   3.126720  - 12. 
+0          1131.4661 - 13. 
+-151.5601  2.341710  - 14. 
+0          765.4319  - 15. 
+-75.7800   1.098710  - 16.  This curve has actually been changed. 
+0          449.1019  - 17. (For better screen fit, RARS startline moved here.) 
+-212.1841  0.826612  - 18. 
+0          178.1948  - 19. 
+151.5601   1.608753  - 20. 
+0          227.2684  - 21. 
+-303.1201  1.119622  - 22. 
+-463.8632  2.201824  - 23. 
+ 
+ 
+  radius, length - NSEG repetitions of segment radius, length. 
+  radius, length   (0 radius means a straightaway, with length 
+  radius, length    in feet.  Length of curves is in radians. 
+  radius, length    Negative radius denotes right turn.) 
+ 
+ 
+This is ESTORIL.TRK, 
+by Ferdinand Trauttmansdorff <ao984@freenet.carleton.ca>, 
+June 22, 1995. 
+ 
+The track file is nearly to scale and the length is accurate. 
+ESTORIL is the site of the Portugese Grand Prix.  Estoril is frequently 
+used as a test circuit by many of the F1 teams because of the long straight 
+and the challenging mix of high and low speed corners. 
+ 
+ 
+

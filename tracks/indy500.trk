@@ -1,0 +1,28 @@
+ 8           NSEG   
+ 5300 3000   MAX_X, _Y   
+ 80          width   
+   
+   
+ 1000 700  0 TRK_STRT_X, _Y, _ANG   
+ 3400 2700   SCOREBOARD   
+ 500  2400   LEADERBOARD    
+ 2000 1800   IP   
+ 450  300    LENGTH OF TRACK message   
+ .5   3      FINISH, START_ROWS    
+   
+-1           PIT_SIDE   
+11000 13000   PIT_ENTRY, PITLANE_START   
+1000 3000     PITLANE_END, PIT_EXIT   
+60           PITLANE_SPEED   
+   
+ 0    3250      
+ 900  90   
+ 0    650   
+ 900  90   
+ 0    3250   
+ 900  90   
+ 0    650.0   
+ 900  90   
+   
+This is a fairly accurate rendering of the Indianapolis Motor   
+Speedway, within the limits of the RARS software.

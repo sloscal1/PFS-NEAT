@@ -1,0 +1,78 @@
+41
+4200    1500    
+80
+
+850     2980  -.5       Start of track
+3200    2950            Scoreboard
+100     1500            Leaderboard
+1300    1000            Instrument Panel
+1100    100             Length of Track
+0.31    2
+
+1
+13800   15200
+500     1000
+80
+
+0       3187            LOONG start/finish straight
+-207    90              Elf
+308     59.5
+804     10
+-414    34.5            Renault
+-310    41.5            |
+-393    43.5            |
+-651    45
+0       595
+-538    31.5
+-74     70              Repsol
+-393    25              |
+-228    34              |
+-817    29.5
+0       290
+193     75              Seat
+180     67              |
+1218    52
+308     80
+0       138
+-190    21.5
+0       450
+-558    31
+-238    58              Campsa
+0       1575
+308     47              La Caixa
+159     72              |
+0       114
+196     48.5
+390     29
+0       190
+-310    39
+-99     47              Banc de Sabadell
+-165    79              |
+-372    16
+0       290
+-290    44
+-620    28
+0       352             (pit entrance)
+-248    44
+-467    48
+
+The Barcelona Catalunya Circuit used for the Spanish Grand Prix.
+Made by Torben Thellefsen (torben@dir.dk) from the Tyrrell circuit map from
+1996.
+Panels were placed using the Linux version of RARS, but I'm not very
+happy with it. Alas, the track makes it impossible to place the panels
+much differently...
+
+Total length: 2.94 miles.
+
+The length is accurate and the track itself looks quite accurate
+as well. I wasn't forced to mess a whole lot with the track to
+make the ends meet.
+
+Definitely not an easy track! All curves are made up of more than
+one segment, which will "jog" your cornering code.
+Brief testing with various cars indicate that trouble areas will
+be braking for Repsol and the curve between Seat and Campsa, as
+well as La Caixa. All 3 curves start softly, then suddenly make
+a sharp(ish) turn.
+

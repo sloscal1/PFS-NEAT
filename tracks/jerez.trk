@@ -1,0 +1,76 @@
+45                      Number of segments
+ 3100   2880            Bounding box, feet
+ 70                     Width of track
+ 
+ 1500   1200    .95     Track right rail start (X,Y)
+ 3100   1800            Scoreboard
+ 100    2200            Leaderboard
+ 2800   650             Instrument panel
+ 600    900             Length of track message
+ 0.354  2               Finish line. Fraction of first straight.
+ 
+1
+14000   14500
+500     900
+60
+
+ 0      1860              Start/finish straight
+ -169   44              | Expo 92
+ -53    42              |
+ -232   39              |
+ 0      401
+ -232   25              | Michelin
+ -105   93              |
+ 0      95
+ 408    31
+ 576    32
+ 0      223
+ 503    20
+ 365    17
+ 597    39
+ 0      564
+ -591   22              | Sito Pons
+ -232   100             |
+ -496   30              |
+ 0      1965
+ -179   39.5            | Dry Sack
+ -63    64              |
+ 0      42              |
+ -127   51.5            |
+ 0      148
+ 777    45
+ 418    29
+ 0      422
+ 429    69
+ 365    24              | Angel Nieto
+ 640    43              |
+ -675   23
+ -148   82
+ -306   55              | Peluqui
+ -169   57              |
+ 0      633
+ -84    62              | Ayrton Senna
+ 239    51              |
+ 0      84
+ -264   47              | Ferrari
+ -443   37              |
+ -992   17
+ 0      338
+ 830    20
+ 133    112             | Ducados
+ 313    38              |
+ 
+ JEREZ CIRCUIT, Site of the 1997 European Grand Prix
+ Torben Thellefsen (torben@dir.dk), 12th November 1997
+ Map obtained from http://www.tyrrellf1.com/
+ 
+ Narrow, difficult track. A good driver must be able to treat up to 3
+ turn segments as one long turn.
+ I've tried to make the circuit as accurate as possible, but I'm not sure
+ it's an absolute success. The length is pretty accurate, though.
+ I haven't done anything to make the circuit fit better on screen - I'd
+ rather race with the real start/finish straight.
+ Panels were placed using the Linux/X version of RARS.
+ 
+ 
+

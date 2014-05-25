@@ -1,0 +1,68 @@
+36			Number of segments
+4200	2200		Bounding box, feet
+80			Width of track
+
+2230	2020	0.45	Track outer rail start (X,Y)
+700	3000		Scoreboard
+3100	900		Leaderboard
+1800	700		Instrument panel
+1500	1500		Length of track message
+0.4	2		Finish line. Fraction of first straight.
+
+1
+12800  	13500
+700	1000
+60
+
+0	1791		  Wheatcroft Straight (Start/Finish)
+-250	25		| Redgate Corner
+-112.5	88		|
+0	276
+-612.5	49		| Hollywood
+-912.5	25		|
+0	37
+605	51		  Craner Curves
+0	100
+-750	11
+0	220
+-212.5	36		| Old Hairpin
+-100	32		|
+0	575
+430	41		  Starkeys Bridge
+0	515
+380	37		  Schwantz Corner
+0	190
+-388	27		| McLeans Corner
+-100	65		|
+0	938
+-112.5	53		| Coppice Corner
+-738	12		|
+-288	60		|
+0	1845		  Starkeys Straight
+105	90		| Esses
+0	38		|
+-25	85		|
+0	650
+1230	5
+0	625
+-37.5	177		  Melbourne Hairpin
+0	700
+-937.5	13
+0	200
+126.5	174		  Goddards Hairpin
+
+DONINGTON PARK, The Grand Prix Circuit
+Torben Thellefsen, 9th November 1996
+Map obtained from http://www.bath.ac.uk/~py3dlg/tracks.html
+
+I've tried to reproduce the circuit as closely as possible, but it's 
+not an easy task. At least the length is accurate...
+Your car may find this track extremely difficult because of the 
+abundance of corners/curves with varying radius - I've seen only very few cars 
+run for more than 5 laps here(!)
+I seriously hope that doesn't cause you to discard the track without 
+trying it and trying to make your car work here - and you never know: One day 
+you might find your car in a "real" race at Donington Park...
+
+PS. I'd rather start/finish on the correct straight than optimize the 
+track for optimum use of the screen - that's why it's so "flat".

@@ -1,0 +1,73 @@
+27              NSEG - the number of track segments
+6000    5250    X_MAX, Y_MAX - maximum value of X, Y to be displayed, feet
+90.0            width - width of race course, feet
+
+970     5100    -.2     TRK_STRT_X, _Y, _ANG
+2800    2300            SCORE_BOARD_X, _Y 
+500     2000            LDR_BRD_X, _Y 
+4500    3700            IP_X, IP_Y    
+3900    4900            LOTIX, LOTIY  
+.5      2               FINISH, SR        
+
+1
+17500   18500
+500     800
+80
+
+0          3136.2701 -  1. Start/finish straight.
+-675.7458  0.126504  -  2. 
+0          642.8031  -  3. 
+120.8238   1.216871  -  4. |
+-30.2060   1.483936  -  5. | Variante
+0          198.0001  -  6. |   del      (Chicane)
+120.8238   1.256600  -  7. | Rettifilo
+-30.2060   0.897500  -  8. 
+0          440.5304  -  9. 
+-1018.2763 1.377343  - 10. | Curva Grande
+0          1464.2529 - 11. 
+120.8238   1.491342  - 12. | Curve della Roggia
+-30.2060   1.230910  - 13. |   (Chicane)
+0          892.9654  - 14. 
+-328.9066  1.879638  - 15. |  (Lesmo one)
+0          606.5319  - 16. | Curve di Lesmo
+-335.5882  1.183567  - 17. |  (Lesmo two)
+0          602.2763  - 18. 
+1981.5106  0.253061  - 19. | Curva del Serraglio
+0          2207.1006 - 20.  - Track passes under high speed oval.
+241.6476   0.856503  - 21. |
+0          195.3314  - 22. |  Ascari
+-241.6476  1.033791  - 23. |  Chicane
+151.0298   0.961701  - 24. |
+0          3041.9590 - 25. 
+-275.4783  2.376590  - 26. | Curva Parabolica
+-1027.0025 0.729485  - 27. | 
+
+  radius, length - NSEG repetitions of segment radius, length.
+  radius, length   (0 radius means a straightaway, with length
+  radius, length    in feet.  Length of curves is in radians.
+  radius, length    Negative radius denotes right turn.)
+
+This is MONZA-76.TRK,
+by Ferdinand Trauttmansdorff <ao984@freenet.carleton.ca>,
+August 11, 1995.
+
+The track file is nearly to scale and the length is exact.
+
+In 1976 the Monza road circuit was revised with the addition of three
+new chicanes.  The Variante del Rettifilo was added on the start/finish
+straight to slow the approach to the Curve Grande.  A second chicane was
+installed at Curve della Roggia to slow the approach to the Lesmo turns.
+And a third chicane was incorporated at the left-hand Curve del Vialone
+where Alberto Ascari was killed.  The new chicane is named in his honour.
+
+In its 1976 configuration, the road circuit measures 5.8km in length.
+
+Note:
+  In order to fill the screen better in the RARS version of MONZA-55, 
+  I moved the start to the short straight between the two Lesmo turns.
+
+  In this version of MONZA-76, I purposely left the start line in its
+  proper place.  At the start of real F1 races at MONZA, there almost
+  always is a big pile-up in the first chicane (Rettifilo).  It presents
+  a very good collision-avoidance test for the RARS robots too!
+

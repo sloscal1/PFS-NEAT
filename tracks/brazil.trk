@@ -1,0 +1,54 @@
+27
+3000 2400
+60.0
+ 
+1045 	15 	0
+2600 	2290               Score Board coordinates
+1600 	2330               Leader Board coordinates
+2220 	1200               Instrument Panel coordinates
+10  	2250               Name and Length of Track coordinates
+0.6	2
+
+-1
+12400	13500
+200	650
+60
+ 
+0 1693.833035
+189.0438655 2.705260341
+-90.74105545 1.919862177
+0 453.7052772
+264.6614117 2.00712864
+0 2419.761479
+128.5498286 2.094395102
+0 287.3466756
+151.2350924 0.959931088
+0 1436.733378
+-211.7291294 1.658062789
+0 415.8965041
+-181.4821109 2.617993878
+0 189.0438655
+196.6056201 2.792526803
+0 75.61754621
+-189.0438655 0.785398163
+0 453.7052772
+-75.61754621 2.792526803
+0 453.7052772
+226.8526386 1.832595715
+0 604.9403697
+136.1115832 1.919862177
+0 453.7052772
+642.7491428 1.570796327
+0 446.1435226
+378.087731 0.174532925
+ 
+Autodromo Jose Carlos Pace, Interlagos, Brazil
+by Samuli Takala 15.3.95.
+ 
+Track length is quite accurate, but everything else isn't. I didn't have very
+good illustration of the track, so the relative lengths of the straights and
+radii of the corners are far from correct. Still, the overall profile is
+close to the real one.
+I didn't care to calculate the exact match for the last and first segments,
+since the cars seemed to have no trouble driving around it.
+

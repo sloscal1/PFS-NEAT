@@ -1,0 +1,63 @@
+29                   NSEG - the number of track segments   
+4400 3800            X_MAX, Y_MAX - maximum value of X, Y to be displayed, feet   
+80.0                 width - width of race course, feet   
+   
+420   3600 0  TRK_STRT_X, _Y    - coordinates of outer rail starting point, feet   
+4200  1800    SCORE_BOARD_X, _Y - coordinates of scoreboard upper left corner   
+200   1100    LDR_BRD_X, _Y     - coordinates of leader board upper left corner   
+3400  3400    IP_X, IP_Y        - coordinates of Instrument Panel up. lft corner   
+2350  150     LOTIX, LOTIY      - coordinates of start of track length message   
+.5    2         FINISH            - fraction of 1st segment prior to finish line   
+   
+1   
+19500 21000   
+500 1000   
+80   
+   
+0         4142   Front straight (and final bridge)   
+-239   85        Turn 1   
+0         1023   The map shows a Turn 2 in the middle of this straight   
+-153   98        Turn 3   
+0         1036   Camel bridge   
+-805   19        Turn 4   
+0         1078   
+101    3         Monraine Sweep   
+0         1137   
+213    107       Turn 5   
+0         534    Corvette bridge   
+213    94        Turn 6   
+0         559   
+-370   55        Turn 7   
+0         1156   Hurry Downs   
+251    90        Turn 8   
+0         449   
+-369   203       Turns 9 & 10 (Carousel)   
+0         765    Begin back straight   
+-1082  53        Turn 11 (Kink)   
+0         1231   
+546    21        Kettle Bottoms   
+0         921   
+-77    71        Turn 12 (Canada Corner)   
+-392   40   
+0         238    Billy Mitchell bridge   
+476    49        Turn 13   
+0         750   
+-110   100       Turn 14   
+   
+Road America (Elhkart Lake, WI)   
+   
+This is my approximation of Road America, one of the best, dedicated road racing circuits in   
+the US (IMHO). The track is fairly long at 4 miles, has 3 long straights with top speeds   
+around 200 mph (at   
+least for Indy cars). All of the straights end in fairly tight corners, so judging braking distance   
+is critical to a fast lap. There are no hairpins to bring the cars to a crawl, and even the   
+tightest turns can be taken at 60 mph. The carousel presents an interesting challenge, exit   
+speed here is important for that long back  straightaway. It's tempting to lift through "The   
+Kink" in the back straight as the rear end tends to get very loose, but keeping the throttle   
+open is the only way to lead the pack.   
+The map I had to work from had no dimensions, so everything is just an approximation done   
+with compass and ruler. The track length is correct and the turn speeds seem to be fairly   
+consistent with the real thing.   
+   
+Dave Sparks   
+davids@sequoia-dev.com

@@ -1,0 +1,60 @@
+42                      Number of segments
+2430    2200            Track outer rail start (X,Y)
+60                      Track width
+
+1300    1600  0         Start of track
+1300    1150            Scoreboard
+2100    2150            Leaderboard
+300     1600            Instrument Panel
+700     400             Length of Track
+0.5     2               Finish line. Fraction of first straight.
+
+-1
+7200  7700
+-50    50
+60
+
+0       590             | {\O}sterbro, start/finish at Tivoli's entrance
+-10     75
+0       300             \
+-600    15              | Bonnesensgade
+0       90              /
+80      90
+0       225             | Fyensgade
+-20     135
+0       150             | Sj{\ae}llandsgade
+-10     90
+150     45              \
+0       20              |
+70      90              | F{\ae}r{\o} Plads
+0       60              |
+150     40              /
+-870    20              \ Sams{\o}gade
+0       120             /
+-30     90
+-2025   27              \
+-1200   15              | {\O}stre All{\'e}
+0       480             /
+-10     90
+0       90              \
+-510    30              | Dag Hammarskiolds Gade
+0       120             |
+240     52              /
+80      90
+0       630             | Jyllandsgade
+-100    80              \
+-20     100             | John F. Kennedys Plads
+80      95              /
+0       180             \
+-400    45              | Boulevarden
+0       100             |
+435     17              | {\O}ster{\aa}gade
+0       200             /
+-20     114
+0       160             \
+330     20              | Nytorv
+0       300             |
+-225    20              | Passing through Medborgerhuset
+360     47              /
+
+

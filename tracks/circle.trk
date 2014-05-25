@@ -1,0 +1,37 @@
+2 
+1420 800 
+100.0 
+ 
+410     10  0  
+900     560 
+250     500 
+550     1040 
+400     640 
+.1      1 
+ 
+-1 
+2100  3200 
+100   1000 
+60 
+ 
+400  3.1415927 
+400  3.1415927 
+ 
+This is a track definition file.  The computer will only read the above 
+lines, so any kind of commentary can go down here. 
+The arrangement above is: 
+ 
+ NSEG - the number of track segments 
+ X_MAX  Y_MAX - the maximum value of X that needs to be displayed, 
+                feet.  (followed by the same for Y) 
+ width - width of race course, feet 
+ 
+ TRK_STRT_X     TRK_STRT_Y    - coordinates of outer rail starting point, feet 
+ SCORE_BOARD_X  SCORE_BOARD_Y - coordinates of scoreboard upper left corner 
+ LDR_BRD_X      LDR_BRD_Y     - coordinates of leader board upper left corner 
+ LOTIX          LOTIY         - coordinates of start of track length message 
+ FINISH                       - fraction of 1st segment prior to finish line 
+ 
+ radius        length         - NSEG repetitions of segment radius, length: 
+ radius        length         - (0 radius means a straightaway, with length 
+ radius        length         -  in feet.  Length of curves is in radians.)

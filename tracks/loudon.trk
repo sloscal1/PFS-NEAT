@@ -1,0 +1,29 @@
+8             NSEG 
+2350 700      MAX_X, _Y 
+60.0          width 
+ 
+400    50  0  TRK_STRT_X, _Y, _ANG 
+1500 1650     SCOREBOARD 
+350   650     LEADERBOARD 
+1420  600     IP 
+100  1600     LENGTH OF TRACK message 
+.5    2       FINISH, START_ROWS 
+ 
+-1            PIT_SIDE 
+2800 4800     PIT_ENTRY, PITLANE_START 
+500 2000      PITLANE_END, PIT_EXIT 
+40            PITLANE_SPEED 
+ 
+0 1500 
+375  90 
+0 60 
+375 90 
+0 1500 
+375  90 
+0 60 
+375 90 
+ 
+Loudon, New Hampshire, USA. A fairly free representation of the track. 
+Maido Remm, mremm@ebc.ee, 
+23.03.1997 
+

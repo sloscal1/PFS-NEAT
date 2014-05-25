@@ -1,0 +1,47 @@
+ 30          NSEG
+ 5000 3850   MAX_X, MAX_Y
+ 150         width
+
+ 300  2250 0 TRK_STRT_X, TRK_STRT_Y, TRK_STRT_ANG
+ 3600 2000   Scoreboard
+ 700  2000   Leaderboard
+ 2200 1800   Instrument Panel
+ 450  300    Length of track and track record
+ .7   3      Fraction to SF lane, Start rows 
+
+1            Pits on right side
+16500 17500  Pits starting position
+100   300    Pits end position
+100          Pitlane speed, fps
+
+ 0    4500.0  Track data
+ 300  2.61799
+ 0    750.0
+ -150  2.61799
+ 0    450.0
+ 151  3.14159
+ 0    585.0
+ 300  1.308996
+ 0    890.0
+ -150  2.356
+ 0    500.0
+ -10  1.999
+ 350  3.05159
+ 0    150.0
+ 300  1.308996
+ 0    920.0
+ -150 2.8886
+ 0    810.0
+ 300  1.5707
+ 0    100.0
+ 300  1.308996
+ 0    950.0
+ -150 2.356
+ 0    500.0
+  -10  1.999
+ 350  3.05159
+ 0    150.0
+ 300  1.308996
+ 0    980.0
+ 300  1.83986
+

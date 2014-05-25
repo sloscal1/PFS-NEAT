@@ -1,0 +1,26 @@
+4          NSEG 
+2350 700   MAX_X, _Y 
+60.0       width 
+ 
+480    50  0 TRK_STRT_X, _Y, _ANG 
+1500   1650  SCOREBOARD 
+350    750   LEADERBOARD 
+1420  750    IP 
+100   1600   LENGTH OF TRACK message 
+.45   2      FINISH, START_ROWS 
+ 
+-1          PIT_SIDE 
+2800 5000   PIT_ENTRY, PITLANE_START 
+500 2000    PITLANE_END, PIT_EXIT 
+40          PITLANE_SPEED 
+ 
+ 
+0 1330 
+450  180 
+0 1330 
+450  180 
+ 
+MILWAUKEE, Wisconsin, USA.  
+Maido Remm, mremm@ebc.ee, 
+23.03.1997 
+

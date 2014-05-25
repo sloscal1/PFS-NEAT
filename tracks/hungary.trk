@@ -1,0 +1,48 @@
+31            Hungaroring - 2.47 miles
+3500 3500     
+70            I don't know the width exactly.  Its a narrow one, though.
+
+500     3400    0       TRK_STRT_X, _Y   
+3700    3350            SCORE_BOARD_X, _Y 
+800     2300            LDR_BRD_X, _Y   
+2900    1700            IP_X, IP_Y       
+400     3150            LOTIX, LOTIY     
+.388    2               FINISH            
+
+1
+12000 13000
+500 800
+60
+
+0        1897.98
+-231     3.142  ONE
+0        404
+189      2.651  TWO
+0        308
+-231     0.769  THREE
+0        965
+-385     0.315
+0        254
+172      0.889  FOUR
+0        439
+-268     2.549  FIVE
+0        615
+-176     1.258  \ SIX
+250      0.662  / (chicane)
+0        377
+194      1.220  SEVEN
+0        169
+-190     1.519  EIGHT
+0        398
+327      0.653  NINE
+0        346
+-203     1.249  TEN
+0        608.55
+-162     1.205  ELEVEN
+485      0.331  
+0        231
+-815     0.420
+173      2.878  TWELVE
+0        385
+-231     3.142  THIRTEEN
+

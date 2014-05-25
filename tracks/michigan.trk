@@ -1,0 +1,28 @@
+6           NSEG   
+4200 2500   MAX_X, _Y   
+70.0        width   
+   
+1950    300   0 TRK_STRT_X, _Y, _ANG   
+1300    2500    SCOREBOARD   
+2500    2600    LEADERBOARD   
+1500    1200    IP   
+1500    100     LENGTH OF TRACK message   
+.75     2       FINISH, START_ROWS   
+   
+-1          PIT_SIDE   
+8000 10000  PIT_ENTRY, PITLANE_START   
+500  4500   PITLANE_END, PIT_EXIT   
+50          PITLANE_SPEED   
+   
+0 320   
+1960  65   
+980   115   
+0 2083   
+980  115     
+1960  65   
+   
+MICHIGAN International Speedway, Wisconsin, USA.   
+We cannot represent the banking on ovals :-(   
+Maido Remm, mremm@ebc.ee,   
+23.03.1997   
+

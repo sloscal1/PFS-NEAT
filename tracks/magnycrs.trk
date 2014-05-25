@@ -1,0 +1,116 @@
+42             NSEG - the number of track segments 
+3120  2050     X_MAX, Y_MAX - maximum value of X, Y to be displayed, feet 
+70.0           width - width of race course, feet 
+ 
+500  2030 -0.25 TRK_STRT_X, _Y - coordinates of right rail starting point, feet 
+2550  830  SCORE_BOARD_X, _Y - coordinates of scoreboard upper left corner 
+600  1750  LDR_BRD_X, _Y     - coordinates of leader board upper left corner 
+1600  475  IP_X, IP_Y        - coordinates of Instrument Panel up. lft corner 
+780  2175  LOTIX, LOTIY      - coordinates of start of track length message 
+.7    2      FINISH          - fraction of 1st segment prior to finish line 
+ 
+-1 
+12750 13500 
+300 500 
+60 
+ 
+ 
+0          1264.1967 - 01. - Actual Start/Finish Straight 
+394.9692   0.844154  - 02. | 
+0          167.5298  - 03. | Grande Courbe 
+493.7115   0.515143  - 04. | 
+-365.3465  0.888037  - 05.  | 
+-296.2269  1.966931  - 06.  | Estoril 
+-691.1960  0.409454  - 07.  | 
+0          233.0913  - 08. 
+-987.4229  0.285259  - 09. 
+0          655.0732  - 10. 
+-1579.8767 0.332093  - 11. Golf - straightaway 
+0          1319.2047 - 12. 
+-9.8742    2.700158  - 13. Adelaide Hairpin 
+0          281.4827  - 14. 
+-789.9383  0.539857  - 15. 
+987.4229   0.378308  - 16. 
+0          852.2405  - 17. 
+-98.7423   0.905867  - 18. | Nurburgring 
+296.2269   0.728003  - 19. |  
+592.4538   0.364432  - 20. 
+0          263.0671  - 21. 
+296.2269   0.689282  - 22. | 
+157.9877   1.300510  - 23. | 180 Degree 
+100.0000   1.460319  - 24. | 
+0          118.2203  - 25. 
+-296.2269  0.527785  - 26. 
+0          76.5269   - 27. 
+-592.4538  0.343024  - 28. 
+0          99.2905   - 29. 
+493.7115   0.378161  - 30. 
+0          939.0172  - 31 - (for better screen fit, RARS startline moved here.) 
+-246.8557  0.838964  - 32. | Imola 
+246.8557   0.708504  - 33. | 
+789.9383   0.487375  - 34. 
+-118.4908  1.358133  - 35. | Chateau 
+-148.1134  1.446433  - 36. | d'Eau 
+0          1027.3715 - 37. 
+-78.9938   1.043483  - 38. | Chicane 
+128.3650   1.005649  - 39. |  
+296.2269   0.410329  - 40. - Pit entrance to left. 
+0          142.7295  - 41. 
+-19.7485   1.967876  - 42. | Lycee 
+  radius, length - NSEG repetitions of segment radius, length. 
+  radius, length   (0 radius means a straightaway, with length 
+  radius, length    in feet.  Length of curves is in radians. 
+  radius, length    Negative radius denotes right turn.) 
+ 
+This is MAGNYCRS.TRK, 
+by Ferdinand Trauttmansdorff <ao984@freenet.carleton.ca>, 
+November 5, 1995. 
+ 
+The track file is nearly to scale and the length is accurate. 
+ 
+MAGNY-COURS is the current home of the French Grand Prix (1995). 
+The actual start/finish straight (leading up to the left from the bottom 
+centre of the RARS screen) has a peculiar arrangement for races.  The grid 
+forms up before the start line, approximately halfway up this straight. 
+But the finish line, also used for timing and scoring, is right at the 
+bottom of the straight, just after the very tight Lycee corner (bottom of 
+screen).  Last year, (was it Coulthard?) set his fastest F1 qualifying 
+lap by spinning on the exit of Lycee and crossing the timing line backwards! 
+ 
+The long Estoril corner (left edge of screen) tightens slightly three 
+quarters of the way around.  The correct line and a good exit speed are 
+crucial here for a fast lap time because of the long Golf straightaway that 
+follows. 
+ 
+Adelaide hairpin closely resembles the hairpin configuration of the famous 
+Australian street circuit.  In his first year with Benetton, young upstart 
+Michael Schumacher punted Ayrton Senna out of the race here on the first 
+lap. 
+ 
+Those of you familiar with MicroProse F1GP World Circuit will notice that 
+the chicane after the hairpin has been removed. 
+ 
+The Nurburgring right-left jog is taken flat out. 
+ 
+The 180 degree left-hander is very tricky because it keeps tightening up. 
+Under heavy braking, it's easy to lose the back end of the car here. 
+ 
+The Imola curves (after the RARS start line) are challenging as the road 
+dips downhill to the right, then climbs into the left curve.  The view of 
+the apex is blocked both times. Not enough speed approaching Imola will 
+allow an overtaker to pass you going in.  Too much speed exiting Imola 
+and you may not get stopped in time for the right turn at Chateau d'Eau. 
+So you get passed either way.  It's a nasty corner. 
+ 
+If you've done Imola correctly (big if), then Chateau d'Eau shouldn't be a 
+problem.  If you've blown Imola, you'll go off here... 
+ 
+The chicane and Lycee are very dangerous.  It presents a potential passing 
+opportunity for the very brave.  But pit traffic slows for the pit entrance 
+to the left just after the chicane.  The curbs are high and can bounce a car 
+off-line.  And there are lots of concrete walls.  Brazilian Marco Campos was 
+killed here this year in an F3 race. 
+ 
+ 
+ 
+

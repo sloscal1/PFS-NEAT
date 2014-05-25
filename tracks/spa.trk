@@ -1,0 +1,86 @@
+44             NSEG - the number of track segments
+6895  5171     X_MAX, Y_MAX - maximum value of X, Y to be displayed, feet
+75.0           width - width of race course, feet
+
+6102  505  0 TRK_STRT_X, _Y - coordinates of right rail starting point, ft.
+4900  4850   SCORE_BOARD_X, _Y - coordinates of scoreboard upper left corner
+5000  3000   LDR_BRD_X, _Y     - coordinates of leader board upper left corner
+80    5000   IP_X, IP_Y       - coordinates of Instrument Panel up. lft corner
+25    125    LOTIX, LOTIY      - coordinates of start of track length message.
+.2    2      FINISH            - fraction of 1st segment prior to finish line
+
+1
+21900 22600
+300   500
+40
+
+0          537.1705  - 02. RARS Start line moved here (not as good though)
+-56.8478   2.997427  - 03. - La Source hairpin
+1898.8968  0.296887  - 04. - drops downhill after hairpin (Pit exit on right)
+-909.5253  0.352099  - 05. 
+0          269.0690  - 06. - old pits
+-1214.0530 0.503569  - 07. 
+376.2583   0.648638  - 08. - left turn at bottom of hill
+0          331.7626  - 09. | over the bridge into Eau Rouge (much history)
+-300.4699  1.053328  - 10. | steep uphill to the right (very FAST & SCARY)
+545.4403   0.813705  - 11. - Raidillon - climbing left turn (more history)
+-3007.3828 0.560804  - 12. |
+0          1110.4383 - 13. | Long straightaway - still gradually climbing
+2068.0789  0.197941  - 14. | Lots of slipstreaming here
+0          381.6523  - 15. | outbraking zone - good passing area
+-131.2879  1.319249  - 16.  |
+0          158.7216  - 17.  | Les Combes chicane
+207.0762   1.304123  - 18.  |
+-165.1243  1.153162  - 19.  |
+-4360.8393 0.197583  - 20. - Short straight, highest point - Nice view!
+-165.1243  1.880236  - 21. | Malmedy - dropping turn to the right 
+-97.4515   1.202687  - 22. |
+0          305.1931  - 23. 
+376.2583   1.043787  - 24. - Rivage - downhill left
+0          1348.0874 - 25. - potential passing area at end of straight
+511.6039   1.979668  - 26. | Pouhon - tricky very fast
+1052.9865  0.835563  - 27. |          double apex left (still downhill)
+0          571.3644  - 28. 
+-300.4699  2.084916  - 29. Les Fagnes
+240.9126   1.840121  - 30. 
+0          233.0889  - 31. 
+-232.7971  0.884943  - 32. | Stavelot - 180 deg. right turn (top of screen)
+-368.1428  2.424502  - 33. |
+0          640.4709  - 34. 
+-672.6705  0.597839  - 35. 
+1797.3876  0.757075  - 36. 
+714.6224   0.810304  - 37.  Blanchimont - Extremely FAST left turn!    
+0          592.0043  - 38. 
+-2669.0187 0.284946  - 39.  Heavy braking - good passing area
+207.0762   1.201472  - 40. | (Pit entrance on the right)
+-165.1243  1.376698  - 41. | - Enter Bus Stop chicane
+0          240.9939  - 42. 
+-131.2879  1.263677  - 43. | - Exit Bus Stop chicane
+173.2398   1.893068  - 44. | Start grid extends back around this sharp left.
+3083.1712  0.232129  - 01. - Actual Start/Finish on Curved segment.
+
+  radius, length - NSEG repetitions of segment radius, length.
+  radius, length   (0 radius means a straightaway, with length
+  radius, length    in feet.  Length of curves is in radians.
+  radius, length    Negative radius denotes right turn.)
+
+This is SPA.TRK,
+by Ferdinand Trauttmansdorff <ao984@freenet.carleton.ca>,
+May 21, 1996.
+
+The track file is roughly to scale but the length is accurate.  The
+start line should be a little further back from the hairpin.  The grid
+actually extends back partway around the left-hander exiting the bus
+stop chicane.
+
+SPA-FRANCORCHAMPS is one of the few remaining 'classic' Grand Prix
+tracks that has not yet been neutered by chicanes.  Although very much
+shortened from its original length, the current 6.904 km circuit retains
+most of the challenging parts of the original, including the daunting
+Eau Rouge and the very fast Blanchimont.  The awesome helicopter tv
+shots of F1 cars streaming through the forest with long plumes of spray
+trailing behind from the perpetually wet track evoke memories of the
+crazy days when this was all done without the benefit of guard rails
+separating the cars from the trees, hydro poles, and buildings that used
+to line the track edges!  For a good illustration, you should rent the
+video of the 1967 John Frankenheimer film "Grand Prix".

@@ -1,0 +1,53 @@
+32                NSEG - the number of track segments
+3500 2600        X_MAX, Y_MAX - maximum value of X, Y to be displayed,feet
+75.0             width - width of race course, feet
+
+400   600  1.85 TRK_STRT_X, _Y    - coordinates of right rail starting point,feet
+2450  1850  SCORE_BOARD_X, _Y - coordinates of scoreboard upper left corner
+1800  700   LDR_BRD_X, _Y     - coordinates of leader board upper left corner
+700   1750  IP_X, IP_Y        - coordinates of Instrument Panel up. lft corner
+1100  2400  LOTIX, LOTIY      - coordinates of start of track length message
+.7    2     FINISH            - fraction of 1st segment prior to finish line
+
+1
+10800 12800
+100   300
+60
+
+
+
+0         900
+-700       41
+-330       62          (2 curves)
+0         250
+-500       17
+0         500.3         Graham Hill
+-76       181
+0         312.5
+300        46.5
+500        68           two  curves   114.5
+0         594           Cooper straight
+400        78
+250        70           2 curves that add to 148
+0         460
+-1000      15
+0         950           pilgrims drop
+-425       87
+0         600           straight
+-250       48.5
+0         250           westfield
+-250       30.5
+0         187           bend
+-250       35
+0         281           something belt
+-200       56
+275        36
+-200       49
+0         375
+200        95
+0         937
+-263       50
+-670       81          (2 curves)
+Brands hatch  should be about 2.6 miles long
+
+

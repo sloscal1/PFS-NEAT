@@ -1,0 +1,67 @@
+33                NSEG - the number of track segments
+6200  3600        X_MAX, Y_MAX - maximum value of X, Y to be displayed, feet
+83.0              width - width of race course, feet
+
+4350  150 2.77 TRK_STRT_X, _Y    - coordinates of right rail starting point, feet
+5000  4000  SCORE_BOARD_X, _Y - coordinates of scoreboard upper left corner
+800   3700  LDR_BRD_X, _Y     - coordinates of leader board upper left corner
+100   1500  IP_X, IP_Y        - coordinates of Instrument Panel up. lft corner
+500   100   LOTIX, LOTIY      - coordinates of start of track length message
+.3    2     FINISH            - fraction of 1st segment prior to finish line
+
+1              PIT_SIDE +1 is right, -1 is left
+16200 16800    PIT_ENTRY, PITLANE_START
+600 700        PITLANE_END, PIT_EXIT
+60             PITLANE_SPEED - feets per sec.
+
+0       2483.7063       - 0
+-79.19     1.3352       - 1
+395.97     1.4137       - 2
+-4487.60   0.3840       - 3
+-79.19     1.9024       - 4
+0        237.5790       - 5
+131.99     1.4748       - 6
+0        739.1348       - 7
+-52.80     1.0821       - 8
+-5860.28   0.1222       - 9
+4751.58    0.1047       - 10
+-52.80     1.2392       - 11
+844.73     0.6283       - 12
+-686.34    1.2566       - 13
+0        791.9301       - 14
+-52.80     1.5708       - 15
+316.77     1.1868       - 16
+0        369.5674       - 17
+1267.09    0.9948       - 18
+0        422.3627       - 19
+211.18     0.8552       - 20
+0.00     290.3744       - 21
+-79.19     0.8552       - 22
+0        733.8552       - 23
+-633.54    0.5585       - 24
+0       1029.5091       - 25
+-105.59    1.4661       - 26
+0        580.7487       - 27
+-211.18    1.4137       - 28
+0        492.2347       - 29
+171.58     1.9024       - 30
+0         85.5758       - 31
+-237.58    1.6581       - 32
+
+  radius, length - NSEG repetitions of segment radius, length.
+  radius, length   (0 radius means a straightaway, with length
+  radius, length    in feet.  Length of curves is in radians.
+  radius, length    Negative radius denotes right turn.)
+
+
+This is sort of like Albert Park in Melbourne Australia
+
+The length of the track should be 3.274 miles.
+This is one is 3.26 miles long.
+I do not know the width of the track, so I just set a nice 
+not so round number.
+
+Start/Finish line was moved more toward the center of the 
+main straight to get all the cars to start on the straight.
+
+

@@ -1,0 +1,71 @@
+37                NSEG - the number of track segments
+6100  4000        X_MAX, Y_MAX - maximum value of X, Y to be displayed, feet
+100.0             width - width of race course, feet
+
+3400  3900  .15 TRK_STRT_X, _Y - coordinates of right rail starting point, feet
+4500  2750  SCORE_BOARD_X, _Y - coordinates of scoreboard upper left corner
+450   4500  LDR_BRD_X, _Y     - coordinates of leader board upper left corner
+2500  1250  IP_X, IP_Y        - coordinates of Instrument Panel up. lft corner
+2300  4300  LOTIX, LOTIY      - coordinates of start of track length message
+.4    2     FINISH            - fraction of 1st segment prior to finish line
+
+1
+16800 18500
+700   1000
+50
+
+0          2169.7476 - 1. Start/finish straight
+-284.4831  1.145669  - 2.
+0          170.7519  - 3.
+-113.7932  2.103877  - 4.
+0          550.0899  - 5.
+284.4831   0.987454  - 6.  |
+0           87.2027  - 7.  |
+-142.2416  1.264459  - 8.  |
+0          252.7604  - 9.  | The S Curves
+369.8281   1.349596  - 10. |
+0           71.2397  - 11. |
+-170.6899  2.105591  - 12. |
+0          155.1421  - 13.
+398.2764   1.478554  - 14.
+711.2078   1.443486  - 15.
+0          787.4290  - 16.
+-170.6899  1.282135  - 17. | Degner Curve
+-85.3449   0.990646  - 18. |
+0          1009.3570 - 19. - Underpass
+-426.7247  0.615456  - 20.
+0          275.6387  - 21.
+168.6588   2.914685  - 22. | Hairpin Curve
+0          621.7514  - 23.
+-568.9662  1.217764  - 24.
+-995.6909  0.850375  - 25.
+0          260.6938  - 26.
+408.8698   1.471128  - 27. |
+0          110.5600  - 28. | Spoon Curve
+284.4831   2.184916  - 29. |
+0          536.7005  - 30.
+2560.3481  0.323530  - 31.
+0          1607.6440 - 32. - Overpass
+455.1730   1.073794  - 33.
+0          973.0287  - 34.
+-60.0000   1.730595  - 35. |
+160.0000   1.415601  - 36. | Chicane
+-550.0000  1.336178  - 37.
+
+  radius, length - NSEG repetitions of segment radius, length.
+  radius, length   (0 radius means a straightaway, with length
+  radius, length    in feet.  Length of curves is in radians.
+  radius, length    Negative radius denotes right turn.)
+
+
+This is SUZUKA.TRK,
+by Ferdinand Trauttmansdorff <ao984@freenet.carleton.ca>,June 21, 1995.
+
+The track file is nearly to scale and the length is accurate.
+SUZUKA is the site of the Japanese Grand Prix.  Of the Formula One circuits
+presently in use, SUZUKA is the only one with a bridged crossover layout.
+Because of the intersecting track lines, RARS paints only half the track.
+This is kind of neat since each car trails a grey line in its wake.  As the 
+cars sweep up the green straightaway (from bottom left of screen), the grey
+trails remind me of the enormous rooster tails of spray that were thrown up
+by the F1 cars last year in the rain at SUZUKA.

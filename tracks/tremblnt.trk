@@ -1,0 +1,102 @@
+39             NSEG - the number of track segments   
+4500  3375     X_MAX, Y_MAX - maximum value of X, Y to be displayed, feet   
+80.0           width - width of race course, feet   
+   
+   
+320   1600  1.82 TRK_STRT_X, _Y - coordinates of right rail starting point, feet   
+3500  3200  SCORE_BOARD_X, _Y - coordinates of scoreboard upper left corner   
+2000  3000  LDR_BRD_X, _Y     - coordinates of leader board upper left corner   
+500   750   IP_X, IP_Y        - coordinates of Instrument Panel up. lft corner   
+1800  100   LOTIX, LOTIY      - coordinates of start of track length message   
+.5    2      FINISH            - fraction of 1st segment prior to finish line   
+   
+-1   
+13300 13700   
+300 500   
+60   
+   
+   
+0          357.0533  - 1. Start/Finish straight^M   
+-889.0739  0.629425  - 2. Slight dip can bounce car off line.^M   
+-444.5369  0.572508  - 3. Miss apex => go over fence. Jacky Ickx broke a leg here.^M   
+-488.9906  0.587532  - 4. Stay to middle of track.  Steep gut-wrenching 85ft drop. ^M   
+0          458.2275  - 5. STEEP downhill!   
+-222.2685  0.548549  - 6. Diable   
+0          217.8687  - 7. Braking area for entry to esses.   
+-133.3611  0.806956  - 8.   
+-266.7222  1.125045  - 9. Fast corner with big drift angles scrubs off speed.   
+0          80.4965   - 10. Very short braking area.   
+88.9074    1.481412  - 11. Tight and bumpy left hander.   
+0          677.8526  - 12.   
+444.5369   1.257389  - 13. Easy flat-out left hander.   
+0          831.4839  - 14.   
+-333.4027  1.328381  - 15. Very scary fast turn! 2nd half is off-camber. No runoff.   
+0          445.6532  - 16.   
+444.5369   0.407399  - 17.   
+0          698.0241  - 18. Good passing area under braking.   
+-222.2685  1.320497  - 19. Many different lines available through this corner.   
+-111.1342  0.656437  - 20. Good passing opportunity while entering or exiting   
+-355.6295  1.048391  - 21.  corner leading onto long back straight.   
+0          522.0290  - 22.   
+3334.0270  0.243940  - 23. The Hump. Brian Redman's CanAm car got airborne   
+0          1154.8918 - 24.   and cartwheeled here.   
+-377.8564  1.209518  - 25. Turn Ten to the right. Another good passing spot.   
+0          216.7171  - 26.    
+222.2685   1.190290  - 27. The Gulch.   
+0          127.8495  - 28.   
+555.6712   0.244979  - 29. Steep uphill   
+0          97.8111   - 30. Under bridge and into the Bridge turn.   
+177.8148   1.752445  - 31. Slightly banked. Can be taken much faster than appears.   
+0          266.3254  - 32.    
+-555.6712  0.828949  - 33. The Kink.   
+0          545.2537  - 34. Sudden climb at end of straight.   
+-66.6805   1.460036  - 35. Namerow. Flattens momentarily. Then drops to the right.   
+-111.1342  1.249693  - 36. Blind apex and increasing radius.  Tricky to find correct   
+-488.9906  0.162093  - 37.  turn-in point without leaving door open to overtakers.   
+0          327.2067  - 38. Pit entrance to left.   
+777.9396   0.672971  - 39. Paddock Bend   
+0          357.0533  - 1. Start/Finish straight   
+-889.0739  0.629425  - 2. Slight dip can bounce car off line.   
+-444.5369  0.572508  - 3. Miss apex => go over fence. Jacky Ickx broke a leg here.   
+-488.9906  0.587532  - 4. Stay to middle of track.  Steep gut-wrenching 85ft drop.    
+   
+  radius, length - NSEG repetitions of segment radius, length.   
+  radius, length   (0 radius means a straightaway, with length   
+  radius, length    in feet.  Length of curves is in radians.   
+  radius, length    Negative radius denotes right turn.)   
+   
+This is TREMBLNT.TRK,   
+by Ferdinand Trauttmansdorff <ao984@freenet.carleton.ca>,   
+August 8, 1995.   
+   
+The track file is nearly to scale and the length is accurate.   
+The circuit at MONT-TREMBLANT, near St.Jovite north of Montreal, was built   
+in 1965 and was the home of the Canadian Grand Prix before the event was   
+moved to Mosport near Toronto, and later Montreal.  Because of its   
+challenging layout with steep elevation changes, MONT-TREMBLANT has been   
+referred to as a "mini-Nurburgring".   
+   
+Jackie Stewart once said that turn one at MONT-TREMBLANT was the most dangerous   
+curve in North America.  It is entered at high speed following the start/finish   
+straight (left edge of RARS screen).  At the turn-in point, the track dips   
+through an innocent looking hollow, which compresses the car's suspension.   
+Just after the car comes up out of the hollow, heading slightly uphill, the   
+suspension unloads and the car gets light on its toes.  Right at that point,   
+the curve tightens somewhat just as you need maximum grip to keep the car   
+pulling towards the apex at the right edge of the track.  If you miss the apex   
+and run a little wide, you'll be wide at the exit and you're toast.  You should   
+aim to be exiting turn one just left of the track centreline.  Any farther to   
+the left and you're gonna be in big trouble when the bottom drops out.  You   
+better hope you're not still trying to turn at the exit because the track   
+plunges abruptly downhill, and there is suddenly no traction left for anything   
+but going straight ahead! (The RARS start-line marks the crest of the dropoff.)   
+If you go off the left edge of the track, try and do it at an altitude that's   
+low enough to snag the guardrail.  That will channel your flight the rest of   
+the way down the hill where you can again fetch up against the guardrail in   
+the right turn at Diable and then finally be spit out at the Esses.  Going   
+over the rail will dump you either into the forest or into the Diable river,   
+or both.     
+   
+The circuit at MONT TREMBLANT is still in use and is the Canadian home to the   
+Jim Russell Racing School (highly recommended!).  
+

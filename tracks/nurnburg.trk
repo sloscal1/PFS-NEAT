@@ -1,0 +1,61 @@
+26                      Number of segments
+5500    2520            Bounding box, feet
+95                      Width of track
+
+200     400   .5        Track outer rail start (X,Y)
+800     3800            Scoreboard
+4000    2000            Leaderboard
+2000    4100            Instrument panel
+3100    100             Length of track message
+0.287   2               Finish line. Fraction of first straight.
+
+1
+14000   14700
+700     1200
+60
+
+0       2506              Start/finish straight
+-81     78              | Castrol-S
+0       49              |
+236     70              |
+445     36              |
+0       1021
+260     85
+0       245
+-116    131               Ford Curve
+2785    34
+-104    195               Dunlop Corner
+0       881
+369     65              | Shell Curve
+0       53              |
+-348    38              |
+0       1230
+167     85
+0       390
+-185    108
+0       1135
+-390    36                Hatzenbach Bend
+0       1210
+204     50              | Veedol Chicane
+-392    50              |
+0       476
+-144    149               R{\"o}mer Curve
+
+NURBURGRING, The Grand Prix Circuit
+Torben Thellefsen, 8th November 1996
+Map obtained from http://www.bath.ac.uk/~py3dlg/tracks.html
+
+I've tried to make the circuit as accurate as possible, but I'm not 
+sure
+it's an absolute success. The length is pretty accurate, though.
+I haven't done anything to make the circuit fit better on screen - I'd
+rather race with the real start/finish straight.
+Compared to Ferdinand Trautmannsdorff's version of this circuit, the 
+cars
+run a little slower because some of the turns are different and the 
+track
+is a little narrower. I'd say this version is a little more difficult 
+to
+race than Ferdinand's, but I'll let you be the judge of that.
+
+

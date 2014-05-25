@@ -1,0 +1,53 @@
+22                NSEG - the number of track segments
+5550  4000        X_MAX, Y_MAX - maximum value of X, Y to be displayed, feet
+75.0             width - width of race course, feet
+
+3160  3500 0.3 TRK_STRT_X, _Y - coordinates of right rail starting point, feet
+4200  3100  SCORE_BOARD_X, _Y - coordinates of scoreboard upper left corner
+200   4000  LDR_BRD_X, _Y     - coordinates of leader board upper left corner
+4100  900   IP_X, IP_Y        - coordinates of Instrument Panel up. lft corner
+1750  3900  LOTIX, LOTIY      - coordinates of start of track length message
+.4    2     FINISH            - fraction of 1st segment prior to finish line
+
+1
+17200   18000
+200     500
+60
+
+0          1916.67    - 1
+-240.93    96.5       - 2  the Ninety
+0          789.22     - 3
+-522.79    75         - 4
+0          225.49     - 5
+563.73     49         - 6  The Esses
+0          620.1      - 7  tunnel
+-410.05    52         - 8
+0          2705.88    - 9  Back Straight
+-410.05    140.5      - 10
+0          803.87
+338.24     137.5      - 12
+0          860.25
+-212.75    173.5      -14
+0          1761.9
+-156.37    117.5      -16
+0          933.20
+225.49     127.5      - 18
+0          956.28
+450.98     72.5       - 20
+0          734.89
+-150       91         - 22
+
+  radius, length - NSEG repetitions of segment radius, length.
+  radius, length   (0 radius means a straightaway, with length
+  radius, length    in feet.  Length of curves is in radians.
+  radius, length    Negative radius denotes right turn.)
+
+
+This is WATKINS GLEN
+
+This track includes the boot.  The total length of the track should
+be 3.45 miles.  It is 3.47 miles.
+
+"The Boot" is an additional section of track used for the Grand Pix
+course, or so I gather.
+

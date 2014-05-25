@@ -1,0 +1,74 @@
+33          NSEG
+4100 1100   MAX_X, _Y
+70.0        width
+ 
+3000  1150  3.14 TRK_STRT_X, _Y, _ANG
+2600  2900  SCOREBOARD
+600   2500  LEADERBOARD
+2450  650   IP
+600   1300  LENGTH OF TRACK message
+.45   2     FINISH, START_ROWS
+ 
+-1          PIT_SIDE
+16000 16500 PIT_ENTRY, PITLANE_START
+600   800   PITLANE_END, PIT_EXIT
+40          PITLANE_SPEED 
+ 
+ 
+0     2700    1
+-90   210     2
+0     50      3
+90    110     4
+120   50      5
+240   30      6
+-350  45      7
+-650  60      8
+-600  45      9
+6000  10       10
+-110  110     11
+0     800     12
+400   125     13
+0     300     14
+-150  80      15
+0     1100    16
+-120  95      17
+0     100     18
+-120  45      19
+0     1300    20
+130   115     21
+0     150     22
+-450  45      23
+-150  35      24
+-90   90      25
+0     500     26
+150   95      27
+-700  80      28
+-90   134     29
+0     2400    30
+90    91      31
+0     45      32
+90    91      33
+ 
+
+Kuala Lumpur (Sepang) race track
+
+by Doug Eleveld <deleveld@dds.nl> 25 May 1999
+
+This is done almost completly by eye, from a jpeg of the race track, so
+there could <will> be some differences between this and the real track.
+It has mostly the basic shape, so it is good enough for me.  I hope it's
+good enough for you too.  Length is a little too short, and the track is
+also a little to wide.
+
+I don't understand the coordinates for the pitting stuff so I just put in
+some values from another track.  What results is that the pits are -way-
+in the wrong place.  They should be on the inside of segment 0, but end up
+way off.  If you know how to fix this, please fix them and put your name at
+the bottom of this file
+
+Pit position fixed by:
+
+
+Thanks,
+
+Doug Eleveld

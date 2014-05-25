@@ -1,0 +1,55 @@
+28             NSEG - the number of track segments
+4300  2000     X_MAX, Y_MAX - maximum value of X, Y to be displayed, feet
+75.0           width - width of race course, feet
+
+130   525  .42  TRK_STRT_X, _Y - coordinates of right rail starting point, feet
+1000  2900  SCORE_BOARD_X, _Y - coordinates of scoreboard upper left corner
+2400  2500  LDR_BRD_X, _Y     - coordinates of leader board upper left corner
+3100  720   IP_X, IP_Y        - coordinates of Instrument Panel up. lft corner
+20    100   LOTIX, LOTIY      - coordinates of start of track length message
+0.6   2     FINISH            - fraction of 1st segment prior to finish line
+
+1
+11500 12000
+200   400
+60
+
+0          1580.1774 - 1. Start/Finish straight.  Pit exits right onto the
+223.1760   1.068193  - 2. critical line for 1st Chicane.  Very dangerous.
+-99.1894   0.755451  - 3.
+0          196.8637  - 4.
+446.3521   0.694738  - 5.
+0          755.8998  - 6. Wakefield Road
+-49.5947   1.570796  - 7.
+0          347.1627  - 8.
+123.9867   1.570796  - 9.
+0          371.9601  - 10. East Terrace
+-49.5947   1.570796  - 11.
+0          786.1987  - 12.
+223.1760   1.176005  - 13.
+-99.1894   1.176005  - 14. Grenfell
+0          242.8909  - 15.
+-99.1894   1.570796  - 16. G.P. House
+0          937.8159  - 17. Jones Straight - Rundle Street
+-495.9468  0.776549  - 18.
+0          2680.5290 - 19. Brabham Straight (Primary passing area coming up)
+-30.9967   2.469921  - 20. Heavy braking required here. (Good passing zone)
+0          214.3247  - 21.
+619.9335   0.670708  - 22.
+198.3787   0.998622  - 23. Very tricky left turn.  Gets slippery.  Senna
+619.9335   0.826210  - 24.   drove straight into barriers here once.
+0          349.4732  - 25.
+-495.9468  0.736726  - 26. pit entrance to the right.
+0          327.1647  - 27. (For better screen fit, RARS startline moved here.)
+-55.7940   2.661418  - 28. Adelaide Hairpin
+
+  radius, length - NSEG repetitions of segment radius, length.
+  radius, length   (0 radius means a straightaway, with length
+  radius, length    in feet.  Length of curves is in radians.
+  radius, length    Negative radius denotes right turn.)
+
+This is ADELAIDE.TRK,
+by Ferdinand Trauttmansdorff <ao984@freenet.carleton.ca>,
+October 28, 1995.
+
+The track file is nearly to scale and the length is accurate.
