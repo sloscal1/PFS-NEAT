@@ -1,8 +1,5 @@
 PFS-NEAT
 ========
-
-COMING SOON (~20140525).
-
 #Overview#
 Implementations of several feature selection algorithms that use the NEAT genetic search method.
 The Predictive Feature Selection embedded in NEAT project gives implementations of several algorithms for scaling up direct genetic direct policy search methods to environments with many (possibly irrelevant or redundant) state variables. The code on this site contains an implementations of this work, and several other competing feature selection algorithms that use the NEAT genetic search algorithm. The papers these algorithms are based on can be found here:
@@ -88,9 +85,38 @@ Each environment has a few specific parameters, and only need to be included if 
 * `initial.topology.fully.connected` should be set to false.
 * `add.connection.class` must be set to `mil.af.rl.anji.AddConnectionMutationOperatorFixed`.
 
+##PFS-NEAT/SAFS-NEAT shared parameters##
+* `container.class` is the sample storage container. If RAM is an issue, use `mil.af.rl.predictive.FailureSeparatingSampleContainer`, otherwise some time can be saved if `mil.af.rl.predictive.EagerChromosomeSampleContainer`.
+* `container.max_samples` is the maximum number of samples to store. Since current implementations store all samples in RAM, reasonable values should be selected based on your system.
+* `container.eager.base.class` is the temporary storage container used while policies are being evaluated. This can be the FailureSeparating container mentioned above.
+* `container.eager.k` is the number of policies to keep samples from. The top 5 most fit policies will be used.
+* `selector.class` can be set to set up specific sampling schemes from the container. In the current implementation, the container itself does some sampling when necessary to keep the number of samples below the maximum, therefore we don't do any more sampling and use `mil.af.rl.predictive.IdentitySampleSelector`.
+* `subspace.min_samples` sets a threshold for the number of samples to have in the container before a feature selection step can occur (regardless of how many generations is may take to collect all of these samples).
+* `stagnation.class` is the first stagnation class. The components of stagnation have a large impact on the algorithms, and eventually a decorator pattern was used to allow composable stagnation classes to allow rapid experimentation. Unfortunately, this doesn't work well with properties files since keys must be unique. What we end up with is the .# syntax, where the parameters of the first class end with .1, parameters of the second end in .2, and so on. I will detail the stagnation settings used in the properties files as an example. This class is set to `mil.af.rl.predictive.SlidingWindowStagnation`.
+* `stagnation.sliding.window.1` the first stagnation class's (SlidingWindow's) minimum time before performing another round of feature selection. Set to 10.
+* `stagnation.sliding.factor.1` the scaling factor on the window. Set here to grow the window slightly over time (1.2).
+* `stagnation.class.2` the second decorator used is `mil.af.rl.predictive.TrendStagnation`, which considers a populations stagnant if the fitness of the champion does not increase much.
+* `stagnation.trend.window.2` sets the number of generations to take an average over to determine trend stagnation (10).
+* `stagnation.trend.threshold.2` fitness change threshold (below this number is considered stagnant. Varies depending on max fitness of a particular problem.
+* `progressive_learner.class` the learner must have support for changing of feature subsets, so we use a modified version of the standard Evolver `mil.af.rl.anji.learner.Evolver`.
+
 ##SAFS-NEAT specific parameters##
+* `subspace_identification.class` is the feature selection algorithm to use, for SAFS it is `mil.af.rl.safs.DiscMISubspaceIdentifier` which uses mutual inforamtion between elements of samples from the sample container to determine feature relevance. It also discretizes the sample values before assessing relevance.
+* `subspace_identification.dmi.sampl_relationship` defines which components of a sample to use in the above relevance measure. DELTA_STATE_ACTION is typical for SAFS (though others can be found in mil.af.rl.predictive.SampleUtilities). This one tells the above feature selection algorithm to compare changes in each state variable from one timestep to the next against the action variables.
+* `subspace.discretize.predictors.bins` number of labels to use in the discretization of the state variable part of the above relevance measure.
+* `subspace.discretize.response.bins` number of labels to use in the discretization of the actions part of the above relevance measure.
+* `subspace_identification.dmi.strategy` controls how to select the features into the active subset after they have been ranked. In this case `mil.af.rl.safs.BestFeatureCriteria` was used, so that only the top scoring feature is added.
 
 ##PFS-NEAT specific parameters##
+* `subspace_identification.class` PFS-NEAT uses `mil.af.rl.predictive.WekaIncSubspaceIdentifier` which means that it incrementally grows the subspace using Weka defined feature search and evaluation classes. Since feature relevance is divided into reward relevance and transition relevance components, and as such there are parameters controlling each phase separately.
+* `weka.reward.search.class` the subset search class used to find the reward relevant set. We use a wrapper around the BestFirst search strategy `mil.af.rl.predictive.BestFirst` to allow settng of constructor parameters by properties file.
+* `weka.attributeSelection.BestFirst.direction` is a constructor parameter to Weka's BestFirst implementation, and we use `FORWARD`.
+* `weka.attributeSelection.BestFirst.term` controls how many non-improving layers of subsets to considered before terminating the search. We use 1.
+* `weka.reward.eval.class` sets the evaluation scheme to use to guide the reward relevant subset. We use `weka.attributeSelection.CfsSubsetEval`.
+* `weka.trans.search.class` gives the subset search technique for transition relevant sensors. We use `mil.af.rl.predictive.BestFirst`. Other parameters are shared with the reward search class.
+* `weka.trans.eval.class` controls the evaluation measure to use when searching for transition relevant sensors. We use the same as reward eval, `weka.attributeSelection.CfsSubsetEval`, but it can be a different algorithm.
+* `weka.single.addition` forces the feature selection step to change the subset size by at most 1 feature at a time if this is set to `true`. It is false by default.
 
-
+I expect to make updates to this codebase as new features (hopefully) or bugs (hopefully not!) necessitate. 
 Enjoy!
+-Steve
