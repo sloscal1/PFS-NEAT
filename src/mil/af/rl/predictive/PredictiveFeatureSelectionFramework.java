@@ -71,6 +71,7 @@ public class PredictiveFeatureSelectionFramework implements Configurable {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		
 		//The main learning loop
 		do{
 			//Let the learner work, keep track of samples

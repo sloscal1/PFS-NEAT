@@ -14,6 +14,7 @@ import org.jgap.Chromosome;
 
 import com.anji.integration.Activator;
 import com.anji.integration.ActivatorTranscriber;
+import com.anji.util.Configurable;
 import com.anji.util.Properties;
 
 /**
@@ -22,7 +23,7 @@ import com.anji.util.Properties;
  * @author Steven Loscalzo (added PFSInfo to the interface of th evaluate method)
  *
  */
-public abstract class RL_Learner {
+public abstract class RL_Learner implements Configurable{
 	static Map<Long, Set<Double>> performances = new TreeMap<>();
 	
 	/**
