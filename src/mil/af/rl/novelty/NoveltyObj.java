@@ -13,24 +13,29 @@ import mil.af.rl.anji.learner.RL_Learner;
 import mil.af.rl.problem.RLProblem;
 
 public class NoveltyObj implements MultiObj, Configurable {
-	private Properties config;
+	public static final String BEHAVIOR_GEN_KEY = "behavior_generator";
+	public static final String NOVELTY_ARCHIVE_KEY = "archive";
+	public static final String NOVELTY_K_KEY = "knn";
+	
 	private BehaviorVectorGenerator bvg = new RandomSampleBehaviorGenerator();
 	private NoveltyArchive archive;
 	private NoveltyDistanceFunction dist = new EucDistance();
 	private int k;
+	private RLProblem problem;
 	
 	@Override
-	public void init(Properties arg0) throws Exception {
-		// TODO Auto-generated method stub
-		
+	public void init(Properties props) throws Exception {
+		bvg = (BehaviorVectorGenerator)props.newObjectProperty(BEHAVIOR_GEN_KEY);
+		archive = (NoveltyArchive)props.newObjectProperty(NOVELTY_ARCHIVE_KEY);
+		k = props.getIntProperty(NOVELTY_K_KEY);
+		problem = (RLProblem)props.singletonObjectProperty("learner.problem");
 	}
 	
 	@Override
 	public Map<Long, Integer> measureObjective(List<Chromosome> chroms) {
-		RLProblem prob = (RLProblem)config.singletonObjectProperty(RL_Learner.PROBLEM_KEY);
 		//Put each chromosome into the behavior space
 		for(Chromosome ch : chroms){
-			prob.reset();
+			problem.reset();
 			archive.put(bvg.generateBehaviorVector(ch), ch.getId());
 		}
 		
@@ -39,7 +44,7 @@ public class NoveltyObj implements MultiObj, Configurable {
 		for(Chromosome ch : chroms){
 			Long id = ch.getId();
 			double[] indiv = archive.get(id);
-			List<double[]> nn = archive.getKNN(k, id);
+			List<double[]> nn = archive.getKNN(k, indiv);
 			double nov = 0.0;
 			for(double[] neighbor : nn)
 				nov += dist.distance(indiv, neighbor);

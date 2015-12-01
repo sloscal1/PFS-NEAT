@@ -6,7 +6,8 @@ import java.util.Map;
 import org.jgap.Chromosome;
 
 public interface MultiObj {
-
+	static final String NOVELTY_OBJ_KEY = "novelty_obj";
+	
 	/**
 	 * Given the list of Chromosomes, return an objective function value to be used on
 	 * evolution. This method may assume that the chromosomes have valid fitness values based on

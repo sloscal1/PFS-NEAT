@@ -1,5 +1,6 @@
 package mil.af.rl.novelty;
 
+import java.util.Arrays;
 import java.util.Random;
 
 import org.jgap.Chromosome;
@@ -23,37 +24,36 @@ public class RandomSampleBehaviorGenerator implements BehaviorVectorGenerator, C
 	
 	@Override
 	public void init(Properties prop) throws Exception {
-		rand = new Random(prop.getLongProperty(RLProblem.RANDOM_SEED_KEY));
+		rand = new Random(prop.getLongProperty("random.seed"));
 		factory = (ActivatorTranscriber) prop.newObjectProperty(ConcurrentFitnessFunction.ACT_TRANS_KEY);
 		//Go through and generate the state inputs to the chromosomes:
-		inputs = new double[prop.getIntProperty(BG_NUM_SAMPLES)][];
+		inputs = new double[prop.getIntProperty(BG_NUM_SAMPLES)][prop.getIntProperty("stimulus.size")];
 		for(int i = 0; i < inputs.length; ++i){
-			double[] input = new double[10]; //TODO pull input size from somewhere (stimulus size)
-			for(int j = 0; j < input.length; ++j)
-				input[j] = rand.nextDouble();
+			for(int j = 0; j < inputs[i].length; ++j)
+				inputs[i][j] = rand.nextDouble();
 			//TODO check input node type to see if they need to be scaled to [-1,1]
-			inputs[i] = input;
 		}
-		//TODO get response size too
+		responseSize = prop.getIntProperty("response.size");
 	}
 	
 	@Override
 	public double[] generateBehaviorVector(Chromosome chrom) {
 		double[] retval = new double[inputs.length * responseSize];
-		try {
-			Activator activator = factory.newActivator(chrom);
+//		try {
+			//Activator activator = factory.newActivator(chrom);
 			//Concatenate responses
 			int base = 0;
 			for(double[] input : inputs){
-				double[] next = activator.next(input);
+				double[] next = new double[responseSize]; //activator.next(input);
+				Arrays.fill(next, chrom.getFitnessValue());
 				for(int i = 0; i < next.length; ++i)
 					retval[base+i] = next[i];
 				base += responseSize;
 			}
-		} catch (TranscriberException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		} catch (TranscriberException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		return retval;
 	}
 }

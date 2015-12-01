@@ -93,7 +93,7 @@ public class NoveltyGenotypeAdapter extends Genotype implements Serializable {
 	 *             if the given Configuration object is in an invalid state.
 	 */
 	public NoveltyGenotypeAdapter(Configuration a_activeConfiguration,
-			List<Chromosome> a_initialChromosomes, PFSInfo info)
+			List<Chromosome> a_initialChromosomes, MultiObj obj, PFSInfo info)
 			throws InvalidConfigurationException {
 		super(a_activeConfiguration, a_initialChromosomes); //This is basically ignored.
 		// Sanity checks: Make sure neither the Configuration, the array
@@ -116,6 +116,7 @@ public class NoveltyGenotypeAdapter extends Genotype implements Serializable {
 								+ "Chromosomes is null. No instance in this array may be null.");
 		}
 		this.info = info;
+		this.mo = obj;
 		activeConfiguration = a_activeConfiguration;
 
 		// First arg of adjust and add must be the same
@@ -422,12 +423,17 @@ public class NoveltyGenotypeAdapter extends Genotype implements Serializable {
 		Map<Long, Integer> multi = mo.measureObjective(chromosomes);
 		for(Chromosome chrom : chromosomes)
 			chrom.setFitnessValue(multi.get(chrom.getId()));
+		
 		// _SL_ 6/27/11 Refactored to disconnect evolution from fitness
 		// evaluation
 		onlyEvolve();
+
 		//Now put the fitness back so that other Genotype operations are not affected:
-		for(Chromosome chrom : chromosomes)
-			chrom.setFitnessValue(fitnessOnly.get(chrom.getId()));
+		for(Chromosome chrom : chromosomes){
+			//The mutations would result in the new chromosomes not having a fitness, use their primary parent instead
+			int fitness = fitnessOnly.containsKey(chrom.getId()) ? fitnessOnly.get(chrom.getId()) : fitnessOnly.get(chrom.getPrimaryParentId()); 
+			chrom.setFitnessValue(fitness);
+		}
 	}
 
 	/**
@@ -570,7 +576,7 @@ public class NoveltyGenotypeAdapter extends Genotype implements Serializable {
 	 *             if the given Configuration instance not in a valid state.
 	 */
 	public static NoveltyGenotypeAdapter randomInitialGenotype(
-			Configuration a_activeConfiguration, PFSInfo info)
+			Configuration a_activeConfiguration, MultiObj noveltyObj, PFSInfo info)
 			throws InvalidConfigurationException {
 		if (a_activeConfiguration == null) {
 			throw new IllegalArgumentException(
@@ -596,7 +602,7 @@ public class NoveltyGenotypeAdapter extends Genotype implements Serializable {
 			//I think it should be null map since this is only used in the beginning
 		}
 
-		return new NoveltyGenotypeAdapter(a_activeConfiguration, chroms, info);
+		return new NoveltyGenotypeAdapter(a_activeConfiguration, chroms, noveltyObj, info);
 	}
 
 	/**
