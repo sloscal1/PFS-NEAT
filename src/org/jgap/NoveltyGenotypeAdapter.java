@@ -74,7 +74,7 @@ public class NoveltyGenotypeAdapter extends Genotype implements Serializable {
 	private PFSInfo info;
 	//_SL_ 20151130 added to support changing the fitness to relfect other objective funcitons.
 	private MultiObj mo;
-	
+
 	/**
 	 * This constructor is used for random initial Genotypes. Note that the
 	 * Configuration object must be in a valid state when this method is
@@ -94,7 +94,7 @@ public class NoveltyGenotypeAdapter extends Genotype implements Serializable {
 	 */
 	public NoveltyGenotypeAdapter(Configuration a_activeConfiguration,
 			List<Chromosome> a_initialChromosomes, MultiObj obj, PFSInfo info)
-			throws InvalidConfigurationException {
+					throws InvalidConfigurationException {
 		super(a_activeConfiguration, a_initialChromosomes); //This is basically ignored.
 		// Sanity checks: Make sure neither the Configuration, the array
 		// of Chromosomes, nor any of the Genes inside the array are null.
@@ -135,7 +135,7 @@ public class NoveltyGenotypeAdapter extends Genotype implements Serializable {
 		}
 	}
 
-	
+
 	protected void adjustChromosomeMaterialList(List<ChromosomeMaterial> chroms, int targetSize) {
 		while (chroms.size() < targetSize) {
 			int idx = chroms.size() % chroms.size();
@@ -149,7 +149,7 @@ public class NoveltyGenotypeAdapter extends Genotype implements Serializable {
 			chroms.remove(chroms.size() - 1);
 		}
 	}
-	
+
 	/**
 	 * adjust chromosome list to fit population size; first, clone population
 	 * (starting at beginning of list) until we reach or exceed pop. size or
@@ -160,15 +160,15 @@ public class NoveltyGenotypeAdapter extends Genotype implements Serializable {
 	 * @param targetSize
 	 */
 	protected void adjustChromosomeList(List<Chromosome> chroms, int targetSize) {
-			while (chroms.size() < targetSize) {
-				int idx = chroms.size() % chroms.size();
-				Chromosome orig = chroms.get(idx);
-				Chromosome clone = new Chromosome(orig.cloneMaterial(),
-						activeConfiguration.nextChromosomeId());
-				
-				chroms.add(clone);
-//				info.setFeatureMap(clone, info.getFeatureMap(orig));
-			}
+		while (chroms.size() < targetSize) {
+			int idx = chroms.size() % chroms.size();
+			Chromosome orig = chroms.get(idx);
+			Chromosome clone = new Chromosome(orig.cloneMaterial(),
+					activeConfiguration.nextChromosomeId());
+
+			chroms.add(clone);
+			//				info.setFeatureMap(clone, info.getFeatureMap(orig));
+		}
 		while (chroms.size() > targetSize) {
 			// remove from end of list
 			Chromosome extinct = chroms.remove(chroms.size() - 1);
@@ -226,10 +226,10 @@ public class NoveltyGenotypeAdapter extends Genotype implements Serializable {
 		//
 		if(chromosomes == null)
 			return;
-		
+
 		chromosomes.add(chrom);
-//		if(chromosomes.size() != 0)
-//			info.setFeatureMap(chrom, info.getFeatureMap(chromosomes.get(0)));
+		//		if(chromosomes.size() != 0)
+		//			info.setFeatureMap(chrom, info.getFeatureMap(chromosomes.get(0)));
 		// specie collection
 		boolean added = false;
 		Specie specie = null;
@@ -272,7 +272,7 @@ public class NoveltyGenotypeAdapter extends Genotype implements Serializable {
 	 */
 	public synchronized List<Chromosome> getKFittestChromosome(int k) {
 		LinkedList<Chromosome> fittestChromosomes = new LinkedList<Chromosome>();
-		
+
 		ListIterator<Chromosome> iter = getChromosomes().listIterator();
 		while (iter.hasNext()) {
 			Chromosome chrom = iter.next();
@@ -352,7 +352,7 @@ public class NoveltyGenotypeAdapter extends Genotype implements Serializable {
 		chrom.add(getFittestChromosome());
 		bulkFunction.evaluate(chrom);
 	}
-	
+
 	/**
 	 * Kind of a replay thing to get the specified chromosome to gather samples in
 	 * the environment.
@@ -397,7 +397,7 @@ public class NoveltyGenotypeAdapter extends Genotype implements Serializable {
 				.getBulkFitnessFunction();
 		if (bulkFunction != null) {
 			bulkFunction.evaluate(chromosomes);
-//			((ConcurrentLearner)bulkFunction).printOutputs();
+			//			((ConcurrentLearner)bulkFunction).printOutputs();
 		} else {
 			// Refactored such that Chromosome does not need a reference to
 			// Configuration. Left his
@@ -423,7 +423,7 @@ public class NoveltyGenotypeAdapter extends Genotype implements Serializable {
 		Map<Long, Integer> multi = mo.measureObjective(chromosomes);
 		for(Chromosome chrom : chromosomes)
 			chrom.setFitnessValue(multi.get(chrom.getId()));
-		
+
 		// _SL_ 6/27/11 Refactored to disconnect evolution from fitness
 		// evaluation
 		onlyEvolve();
@@ -434,6 +434,13 @@ public class NoveltyGenotypeAdapter extends Genotype implements Serializable {
 			int fitness = fitnessOnly.containsKey(chrom.getId()) ? fitnessOnly.get(chrom.getId()) : fitnessOnly.get(chrom.getPrimaryParentId()); 
 			chrom.setFitnessValue(fitness);
 		}
+		//_SL_ 20151202 pulled out of onlyEvolve so that proper fitness is logged.
+		// Fire an event to indicate we've performed an evolution.
+		// -------------------------------------------------------
+		activeConfiguration.getEventManager()
+		.fireGeneticEvent(
+				new GeneticEvent(
+						GeneticEvent.GENOTYPE_EVOLVED_EVENT, this));
 	}
 
 	/**
@@ -512,28 +519,21 @@ public class NoveltyGenotypeAdapter extends Genotype implements Serializable {
 			adjustChromosomeMaterialList(
 					offspring,
 					activeConfiguration.getPopulationSize()
-							- chromosomes.size());
+					- chromosomes.size());
 
 			// add offspring
 			// ------------------------------
 			addChromosomesFromMaterial(offspring);
-						
+
 			// Fire an event to indicate we're starting genetic operators. Among
 			// other things this allows for RAM conservation.
 			// -------------------------------------------------------
 			activeConfiguration
-					.getEventManager()
-					.fireGeneticEvent(
-							new GeneticEvent(
-									GeneticEvent.GENOTYPE_FINISH_GENETIC_OPERATORS_EVENT,
-									this));
-
-			// Fire an event to indicate we've performed an evolution.
-			// -------------------------------------------------------
-			activeConfiguration.getEventManager()
-					.fireGeneticEvent(
-							new GeneticEvent(
-									GeneticEvent.GENOTYPE_EVOLVED_EVENT, this));
+			.getEventManager()
+			.fireGeneticEvent(
+					new GeneticEvent(
+							GeneticEvent.GENOTYPE_FINISH_GENETIC_OPERATORS_EVENT,
+							this));
 		} catch (InvalidConfigurationException ex) {
 			throw new RuntimeException("bad config", ex);
 		}
@@ -577,7 +577,7 @@ public class NoveltyGenotypeAdapter extends Genotype implements Serializable {
 	 */
 	public static NoveltyGenotypeAdapter randomInitialGenotype(
 			Configuration a_activeConfiguration, MultiObj noveltyObj, PFSInfo info)
-			throws InvalidConfigurationException {
+					throws InvalidConfigurationException {
 		if (a_activeConfiguration == null) {
 			throw new IllegalArgumentException(
 					"The Configuration instance may not be null.");
@@ -685,13 +685,13 @@ public class NoveltyGenotypeAdapter extends Genotype implements Serializable {
 		chromosomes = new ArrayList<Chromosome>();
 		for(Chromosome nC : newChroms)
 			addChromosome(nC);
-//		for(int i = 0; i < newChroms.size(); ++i){
-//			Specie specie = chromosomes.get(i).getSpecie();
-//			Chromosome newChrom = newChroms.get(i);
-//			newChrom.setSpecie(specie);
-//			if(!specie.match(newChrom))
-//				specie.add(newChrom);
-//		}
-		
+		//		for(int i = 0; i < newChroms.size(); ++i){
+		//			Specie specie = chromosomes.get(i).getSpecie();
+		//			Chromosome newChrom = newChroms.get(i);
+		//			newChrom.setSpecie(specie);
+		//			if(!specie.match(newChrom))
+		//				specie.add(newChrom);
+		//		}
+
 	}
 }
