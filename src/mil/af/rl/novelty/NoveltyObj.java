@@ -9,7 +9,6 @@ import org.jgap.Chromosome;
 import com.anji.util.Configurable;
 import com.anji.util.Properties;
 
-import mil.af.rl.anji.learner.RL_Learner;
 import mil.af.rl.problem.RLProblem;
 
 public class NoveltyObj implements MultiObj, Configurable {
