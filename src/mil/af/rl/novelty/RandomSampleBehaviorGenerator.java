@@ -12,7 +12,6 @@ import com.anji.util.Configurable;
 import com.anji.util.Properties;
 
 import mil.af.rl.anji.learner.ConcurrentFitnessFunction;
-import mil.af.rl.problem.RLProblem;
 
 public class RandomSampleBehaviorGenerator implements BehaviorVectorGenerator, Configurable {
 	public static final String BG_NUM_SAMPLES = "behavior_vector_generator.num_samples";
@@ -39,21 +38,20 @@ public class RandomSampleBehaviorGenerator implements BehaviorVectorGenerator, C
 	@Override
 	public double[] generateBehaviorVector(Chromosome chrom) {
 		double[] retval = new double[inputs.length * responseSize];
-//		try {
-			//Activator activator = factory.newActivator(chrom);
+		try {
+			Activator activator = factory.newActivator(chrom);
 			//Concatenate responses
 			int base = 0;
 			for(double[] input : inputs){
-				double[] next = new double[responseSize]; //activator.next(input);
-				Arrays.fill(next, chrom.getFitnessValue());
+				double[] next = activator.next(input);
 				for(int i = 0; i < next.length; ++i)
 					retval[base+i] = next[i];
-				base += responseSize;
+				base += next.length;
 			}
-//		} catch (TranscriberException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		} catch (TranscriberException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return retval;
 	}
 }

@@ -21,16 +21,18 @@ import weka.core.neighboursearch.NearestNeighbourSearch;
 
 public class RandomSamplingNoveltyArchive implements NoveltyArchive{
 	public static final String RANDOM_FRAC_KEY = "novelty_archive.rand_frac";
-	
+
 	/** The probability that a newly added point will be retained in the archive on an update */
 	private double frac = 0.02;
 	/** The source of randomness for the archive */
 	private Random rand;
-	
+
 	/** A mapping from Chromosome id's to position in the data array */
 	private Map<Long, Integer> vectorMap = new HashMap<>();
 	/** The active behavior data array */
 	private List<double[]> data = new ArrayList<>();
+	/** List of indices of Ids to help update the vectorMap */
+	private List<Long> corrIds = new ArrayList<>();
 	/** The most recently added id's, not yet added to the permanent archive */
 	private Set<Long> recent = new HashSet<>();
 	/** The algorithm to actually obtain the NNs */
@@ -39,7 +41,7 @@ public class RandomSamplingNoveltyArchive implements NoveltyArchive{
 	private Instances insts;
 	/** Whether or not the data set has been altered (requiring NN algo rerun before query) */
 	private boolean altered = false;
-	
+
 	/**
 	 * Put the given behavior vector into this archive, associated with the given id.
 	 * 
@@ -53,8 +55,9 @@ public class RandomSamplingNoveltyArchive implements NoveltyArchive{
 			recent.add(id);
 			vectorMap.put(id, pos);
 		}
-		if(pos == data.size()) data.add(null);
+		if(pos == data.size()){ data.add(null); corrIds.add(null);}
 		data.set(pos, behaviorVector);
+		corrIds.set(pos, id);
 		altered = true;
 	}
 
@@ -81,7 +84,7 @@ public class RandomSamplingNoveltyArchive implements NoveltyArchive{
 	public List<double[]> getKNN(int k, Long id) {
 		return getKNN(k, data.get(vectorMap.get(id)));
 	}
-	
+
 	/**
 	 * Return up to k nearest neighbors of the behavioral vector. 
 	 * If k > number of points in the archive, only the maximum number
@@ -104,13 +107,13 @@ public class RandomSamplingNoveltyArchive implements NoveltyArchive{
 			}
 			altered = false;
 		}
-		
+
 		//Need to turn the behavior vector into an Instance
 		Instance newInst = new DenseInstance(insts.numAttributes());
 		for(int i = 0; i < newInst.numAttributes(); ++i)
 			newInst.setValue(i, vector[i]);
 		newInst.setDataset(insts);
-		
+
 		//Find the nearest neighbors according to the last altered index
 		Instances nns = null;
 		try {
@@ -119,12 +122,12 @@ public class RandomSamplingNoveltyArchive implements NoveltyArchive{
 			e.printStackTrace();
 			System.exit(0);
 		}
-		
+
 		//Convert to a non-weka format:
 		List<double[]> retVal = new ArrayList<>(k);
 		for(int i = 0; i < nns.numInstances(); ++i)
 			retVal.add(nns.get(i).toDoubleArray());
-		
+
 		return retVal;
 	}
 
@@ -146,18 +149,21 @@ public class RandomSamplingNoveltyArchive implements NoveltyArchive{
 				toRemove.add(vectorMap.get(id));
 				vectorMap.remove(id);
 			}
-		
+
 		//Sort the indices to make it easier to remove
 		Collections.sort(toRemove);
-		
+
 		//Go through and pull off the ones that aren't needed from the archive.
-		for(int i = toRemove.size()-1; i >= 0; --i)
-			data.remove(toRemove.get(i));
-		if(!recent.isEmpty()){
-			recent.clear();
-			altered = true; //Assume that some points aren't involved anymore		
+		for(int i = toRemove.size()-1; i >= 0; --i){
+			data.remove((int)toRemove.get(i));
+			corrIds.remove((int)toRemove.get(i));
 		}
-		System.out.println("Archive size: "+data.size());
+		//Now update the vectorMap:
+		for(int i = 0; i < corrIds.size(); ++i)
+			vectorMap.put(corrIds.get(i), i);
+		
+		recent.clear();
+		altered = true; //Assume that some points aren't involved anymore		
 	}
 
 	@Override
