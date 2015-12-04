@@ -25,9 +25,11 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 import core.io.Arg;
 import core.io.ProgramParameter;
@@ -60,12 +62,28 @@ public class NoveltyEvolverSP {
 			return false;
 		};
 	};
-
+	public static ProgramParameter RANDSEED = new ProgramParameter("randseed", Arg.REQUIRED, 'r'){
+			public boolean process(String arg0, java.util.Map<ProgramParameter,Object> arg1) {
+				arg1.put(this, Long.parseLong(arg0));
+				return false;
+			};
+	};
+	public static ProgramParameter TABLE_PREFIX = new ProgramParameter("result-table-prefix", Arg.REQUIRED, 'p'){};
+	public static ProgramParameter SEARCHER_PORT = new ProgramParameter("searcher-port", Arg.REQUIRED, 's'){
+		public boolean process(String arg0, java.util.Map<ProgramParameter,Object> arg1) {
+			arg1.put(this, Integer.parseInt(arg0));
+			return false;
+		};
+	};
+	
 	static{
 		allParams.add(PROPERTY_TEMPLATE);
 		allParams.add(BVG_NUM_SAMPLES);
 		allParams.add(PROPERTY_RESOURCE_DIR);
 		allParams.add(MAIN_CLASS);
+		allParams.add(RANDSEED);
+		allParams.add(TABLE_PREFIX);
+		allParams.add(SEARCHER_PORT);
 	}
 
 	/**
@@ -91,24 +109,36 @@ public class NoveltyEvolverSP {
 
 			//Modify the properties file
 			try(Scanner read = new Scanner(input)){
+				Set<ProgramParameter> used = new HashSet<>();
 				while(read.hasNextLine()){
 					String line = read.nextLine();
 					boolean printed = false;
 					for(ProgramParameter pp : inputs.keySet())
 						if(line.startsWith(pp.getLongName())){
 							out.println(pp.getLongName()+"="+inputs.get(pp).toString());
+							used.add(pp);
+							printed = true;
+						} else if(line.startsWith("random.seed")){
+							out.println("random.seed="+inputs.get(pp).toString());
+							used.add(pp);
 							printed = true;
 						}
 					if(!printed)
 						out.println(line);
 				}
-				//TODO need to put in the searcher port etc.
+				//Add in the other information that was passed and not represented in the template:
+				for(ProgramParameter pp : inputs.keySet()){
+					if(!used.contains(pp) && pp.getRequiredVal() == Arg.REQUIRED)
+						out.println(pp.getLongName()+"="+inputs.get(pp).toString());
+				}
 			}
 			out.close();
 
+			String[] procArgs = {outFile.getName()};
+			System.out.println("CLASSPATH="+System.getenv("CLASSPATH"));
 			//Run the method with the modified properties file
 			Method main = ((Class<?>)inputs.get(MAIN_CLASS)).getMethod("main", String[].class);
-			main.invoke(null, new Object[]{outFile.getName()});
+			main.invoke(null, new Object[]{procArgs});
 		}
 	}
 }
