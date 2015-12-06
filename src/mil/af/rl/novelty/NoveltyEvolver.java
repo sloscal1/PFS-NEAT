@@ -36,6 +36,16 @@ import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
+import mil.af.rl.anji.NeatChromosomeUtility;
+import mil.af.rl.anji.NeatConfigurationAdapter;
+import mil.af.rl.anji.learner.ConcurrentFitnessFunction;
+import mil.af.rl.anji.learner.RL_Learner;
+import mil.af.rl.predictive.EagerChromosomeSampleContainer;
+import mil.af.rl.predictive.PFSInfo;
+import mil.af.rl.predictive.PredictiveLearner;
+import mil.af.rl.predictive.SampleContainer;
+import mil.af.rl.predictive.SubspaceIdentification;
+
 import org.apache.log4j.Logger;
 import org.jgap.Allele;
 import org.jgap.BulkFitnessFunction;
@@ -57,16 +67,6 @@ import com.anji.run.Run;
 import com.anji.util.Configurable;
 import com.anji.util.Properties;
 import com.anji.util.Reset;
-
-import mil.af.rl.anji.NeatChromosomeUtility;
-import mil.af.rl.anji.NeatConfigurationAdapter;
-import mil.af.rl.anji.learner.ConcurrentFitnessFunction;
-import mil.af.rl.anji.learner.RL_Learner;
-import mil.af.rl.predictive.EagerChromosomeSampleContainer;
-import mil.af.rl.predictive.PFSInfo;
-import mil.af.rl.predictive.PredictiveLearner;
-import mil.af.rl.predictive.SampleContainer;
-import mil.af.rl.predictive.SubspaceIdentification;
 
 /**
  * Configures and performs an ANJI evolutionary run.
@@ -208,6 +208,11 @@ public class NoveltyEvolver implements Configurable, PredictiveLearner {
 				GeneticEvent.GENOTYPE_EVALUATED_EVENT, logListener);
 
 		// persistence
+		SearchPartyEventListener spListener = new SearchPartyEventListener();
+		spListener.init(props);
+		config.getEventManager().addEventListener(GeneticEvent.GENOTYPE_EVALUATED_EVENT,
+				spListener);
+		
 		PersistenceEventListener dbListener = new PersistenceEventListener(
 				config, run);
 		dbListener.init(props);
@@ -220,6 +225,7 @@ public class NoveltyEvolver implements Configurable, PredictiveLearner {
 				dbListener);
 		config.getEventManager().addEventListener(
 				GeneticEvent.GENOTYPE_EVALUATED_EVENT, dbListener);
+		
 		config.setBulkFitnessFunction(fitnessFunc);
 
 		maxFitness = config.getBulkFitnessFunction().getMaxFitnessValue();

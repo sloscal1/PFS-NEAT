@@ -64,7 +64,7 @@ public class NoveltyEvolverSP {
 	};
 	public static ProgramParameter RANDSEED = new ProgramParameter("randseed", Arg.REQUIRED, 'r'){
 			public boolean process(String arg0, java.util.Map<ProgramParameter,Object> arg1) {
-				arg1.put(this, Long.parseLong(arg0));
+				arg1.put(this, (int)Long.parseLong(arg0));
 				return false;
 			};
 	};
@@ -118,7 +118,7 @@ public class NoveltyEvolverSP {
 							out.println(pp.getLongName()+"="+inputs.get(pp).toString());
 							used.add(pp);
 							printed = true;
-						} else if(line.startsWith("random.seed")){
+						} else if(pp == RANDSEED && line.startsWith("random.seed")){
 							out.println("random.seed="+inputs.get(pp).toString());
 							used.add(pp);
 							printed = true;
@@ -127,6 +127,7 @@ public class NoveltyEvolverSP {
 						out.println(line);
 				}
 				//Add in the other information that was passed and not represented in the template:
+				System.out.println(used);
 				for(ProgramParameter pp : inputs.keySet()){
 					if(!used.contains(pp) && pp.getRequiredVal() == Arg.REQUIRED)
 						out.println(pp.getLongName()+"="+inputs.get(pp).toString());
