@@ -108,8 +108,6 @@ GeneticEventListener {
 				socket.send(msgBuilder.build().toByteArray(), ZMQ.NOBLOCK);
 				msgBuilder.clearReportedValue();
 			}
-			System.out.println(tablePrefix+" "+genOn);
-			System.out.println("#################PUSHED OUT A BUNCH OF RESULTS ####################");
 		}
 	}
 

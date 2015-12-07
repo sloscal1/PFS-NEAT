@@ -104,7 +104,7 @@ public class NoveltyEvolverSP {
 			File input = new File((String)inputs.get(PROPERTY_RESOURCE_DIR)+File.separator+(String)inputs.get(PROPERTY_TEMPLATE));
 
 			//Open the output file
-			File outFile = File.createTempFile(input.getName(), "", new File((String)inputs.get(PROPERTY_RESOURCE_DIR)));
+			File outFile = new File(new File((String)inputs.get(PROPERTY_RESOURCE_DIR)).getAbsolutePath()+File.separator+input.getName()+inputs.get(RANDSEED));
 			PrintWriter out = new PrintWriter(new BufferedWriter (new FileWriter(outFile)));
 
 			//Modify the properties file

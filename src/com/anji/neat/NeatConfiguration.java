@@ -211,7 +211,6 @@ private void initMutation() throws InvalidConfigurationException {
 		//_SL_ 20130605
 		//By default, use the regular (fast) add connection operator.
 		String className = props.getProperty(ADD_CONNECTION_TYPE, "com.anji.neat.AddConnectionMutationOperatorFixed");
-		System.out.println("Using the better add connection!");
 		try {
 			//The singletonObjectProperty(String) method has a lot of trouble for some reason (null entries in maps)
 			//but the singletonObjectProperty(Class) method is okay (just one map).
