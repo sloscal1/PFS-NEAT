@@ -104,7 +104,6 @@ GeneticEventListener {
 							.setType(Result.Type.string)
 							.setValue(structure[1]).build());
 				}
-				System.out.println(genOn+" "+chrom.getFitnessValue()+" "+chrom.getPrimaryParentId()+" "+chrom.getId());
 				socket.send(msgBuilder.build().toByteArray(), ZMQ.NOBLOCK);
 				msgBuilder.clearReportedValue();
 			}

@@ -210,7 +210,7 @@ public class NoveltyEvolver implements Configurable, PredictiveLearner {
 		// persistence
 		SearchPartyEventListener spListener = new SearchPartyEventListener();
 		spListener.init(props);
-		config.getEventManager().addEventListener(GeneticEvent.GENOTYPE_EVALUATED_EVENT,
+		config.getEventManager().addEventListener(GeneticEvent.GENOTYPE_EVOLVED_EVENT,
 				spListener);
 		
 		PersistenceEventListener dbListener = new PersistenceEventListener(
