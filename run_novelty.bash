@@ -6,6 +6,8 @@ for lib in `ls lib/*.jar`; do
   classpath=${classpath}:$lib
 done
 classpath=$classpath:/home/sloscal1/Programming/jars/commons-math3-3.5/commons-math3-3.5.jar
+classpath=$classpath:/home/sloscal1/Programming/jars/jeromq-0.3.6-SNAPSHOT.jar
+classpath=$classpath:/home/sloscal1/Programming/jars/searchparty.jar
 
 prop=$1
 prefix=${prop%%_*}

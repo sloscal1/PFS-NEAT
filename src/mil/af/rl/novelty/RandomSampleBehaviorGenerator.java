@@ -1,6 +1,5 @@
 package mil.af.rl.novelty;
 
-import java.util.Arrays;
 import java.util.Random;
 
 import org.jgap.Chromosome;

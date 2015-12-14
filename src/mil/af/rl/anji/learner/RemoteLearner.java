@@ -65,9 +65,11 @@ public class RemoteLearner extends RL_Learner {
 		rewardBoundary = actionBoundary+1;
 		
 		ProcessBuilder pb = new ProcessBuilder("java", "-cp", classPath, mainClass, propsFileName);
+		pb.redirectErrorStream(true);
 		Process proc = pb.start();
 		results = new ObjectInputStream(proc.getInputStream());
 		netWriter = new ObjectOutputStream(proc.getOutputStream());
+		netWriter.flush();
 	}
 
 	@Override
@@ -98,18 +100,18 @@ public class RemoteLearner extends RL_Learner {
 
 			//Sim was started up in the init method, now has the network,
 			//get the results
-			fitness = (Double)results.readObject();
-			samples = (double[][])results.readObject();
-			if(samples != null && info.isCollecting(chrom)){
-				for(double[] sample : samples){
-					newSamples.add(new ArraySample(Arrays.copyOfRange(sample, 0, stateBoundary),
-							Arrays.copyOfRange(sample, stateBoundary, actionBoundary),
-							sample[actionBoundary],
-							Arrays.copyOfRange(sample, rewardBoundary, sample.length),
-							SampleType.UNKNOWN, 
-							chrom.getId().intValue()));
-				}
-			}
+			fitness = (Integer)results.readObject();
+//			samples = (double[][])results.readObject();
+//			if(samples != null && info.isCollecting(chrom)){
+//				for(double[] sample : samples){
+//					newSamples.add(new ArraySample(Arrays.copyOfRange(sample, 0, stateBoundary),
+//							Arrays.copyOfRange(sample, stateBoundary, actionBoundary),
+//							sample[actionBoundary],
+//							Arrays.copyOfRange(sample, rewardBoundary, sample.length),
+//							SampleType.UNKNOWN, 
+//							chrom.getId().intValue()));
+//				}
+//			}
 				
 			
 

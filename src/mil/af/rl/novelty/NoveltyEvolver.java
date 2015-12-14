@@ -75,7 +75,7 @@ import com.anji.util.Reset;
  * @author Steven Loscalzo modified for compatibility with PFS.
  */
 public class NoveltyEvolver implements Configurable, PredictiveLearner {
-	
+
 	/**
 	 * Main program used to perform an evolutionary run.
 	 * 
@@ -99,7 +99,7 @@ public class NoveltyEvolver implements Configurable, PredictiveLearner {
 			throw th;
 		}
 	}
-	
+
 	private static Logger logger = Logger.getLogger(NoveltyEvolver.class);
 
 	//These are all keys for properties file info
@@ -113,7 +113,7 @@ public class NoveltyEvolver implements Configurable, PredictiveLearner {
 	public static final String FITNESS_TARGET_KEY = "fitness.target";
 	/** the size of the number of inputs to the networks (at maximum) */
 	public static final String NUM_FEATURES = "stimulus.size";
-	
+
 	//State variables for this class
 	/** The configuration file */
 	private NeatConfiguration config = null;
@@ -196,7 +196,7 @@ public class NoveltyEvolver implements Configurable, PredictiveLearner {
 				.newObjectProperty(FITNESS_FUNCTION_CLASS_KEY);
 		//Make sure the same object is used throughout
 		((ConcurrentFitnessFunction)fitnessFunc).setPFSInfo(info);
-		
+
 		config.getEventManager().addEventListener(
 				GeneticEvent.GENOTYPE_EVALUATED_EVENT, run);
 
@@ -208,11 +208,13 @@ public class NoveltyEvolver implements Configurable, PredictiveLearner {
 				GeneticEvent.GENOTYPE_EVALUATED_EVENT, logListener);
 
 		// persistence
-		SearchPartyEventListener spListener = new SearchPartyEventListener();
-		spListener.init(props);
-		config.getEventManager().addEventListener(GeneticEvent.GENOTYPE_EVOLVED_EVENT,
-				spListener);
-		
+		if(props.getBooleanProperty("use.searchparty", false)){
+			SearchPartyEventListener spListener = new SearchPartyEventListener();
+			spListener.init(props);
+			config.getEventManager().addEventListener(GeneticEvent.GENOTYPE_EVOLVED_EVENT,
+					spListener);
+		}
+
 		PersistenceEventListener dbListener = new PersistenceEventListener(
 				config, run);
 		dbListener.init(props);
@@ -225,7 +227,7 @@ public class NoveltyEvolver implements Configurable, PredictiveLearner {
 				dbListener);
 		config.getEventManager().addEventListener(
 				GeneticEvent.GENOTYPE_EVALUATED_EVENT, dbListener);
-		
+
 		config.setBulkFitnessFunction(fitnessFunc);
 
 		maxFitness = config.getBulkFitnessFunction().getMaxFitnessValue();
@@ -237,9 +239,9 @@ public class NoveltyEvolver implements Configurable, PredictiveLearner {
 		selectedFeatures = new LinkedHashMap<Integer, Integer>();
 		for (int i = 0; i < numFeatures; ++i)
 			selectedFeatures.put(i, i);
-		
+
 		MultiObj multiObj = (MultiObj)props.newObjectProperty(MultiObj.NOVELTY_OBJ_KEY);
-		
+
 		if (geno != null) {
 			genotype = new NoveltyGenotypeAdapter(geno, multiObj, info);
 			logger.info("genotype from previous run");
@@ -400,7 +402,7 @@ public class NoveltyEvolver implements Configurable, PredictiveLearner {
 		//Figure out what changes need to happen:
 		Set<Integer> additions = new LinkedHashSet<Integer>();
 		Set<Integer> deletions = new LinkedHashSet<Integer>();
-	
+
 		for (Integer key : mapping.keySet()) {
 			if (mapping.get(key) != SubspaceIdentification.UNUSED) {
 				if (selectedFeatures.get(key) == SubspaceIdentification.UNUSED)
@@ -497,7 +499,7 @@ public class NoveltyEvolver implements Configurable, PredictiveLearner {
 			return (int)(o1.getInnovationId() - o2.getInnovationId());
 		}
 	}
-	
+
 	/**
 	 * Perform a single run.
 	 * 
@@ -515,7 +517,7 @@ public class NoveltyEvolver implements Configurable, PredictiveLearner {
 		//System.out.println("MAX FIT = " + maxFitness);
 		double adjustedFitness = ( maxFitness > 0 ? champ.getFitnessValue() / maxFitness : champ
 				.getFitnessValue() );
-	
+
 		for ( int generation = 0; ( generation < numEvolutions && adjustedFitness < targetFitness ); ++generation ) {
 			// generation start time
 			Date generationStartDate = Calendar.getInstance().getTime();
@@ -537,9 +539,9 @@ public class NoveltyEvolver implements Configurable, PredictiveLearner {
 
 			long durationMillis = generationEndDate.getTime() - generationStartDate.getTime();
 			logger.info( "Generation " + generation + ": end [" + fmt.format( generationStartDate )
-					+ " - " + fmt.format( generationEndDate ) + "] [" + durationMillis + "]" );
+			+ " - " + fmt.format( generationEndDate ) + "] [" + durationMillis + "]" );
 		}
-	
+
 		// run finish
 		config.getEventManager().fireGeneticEvent(
 				new GeneticEvent( GeneticEvent.RUN_COMPLETED_EVENT, genotype ) );
@@ -547,6 +549,6 @@ public class NoveltyEvolver implements Configurable, PredictiveLearner {
 		Date runEndDate = Calendar.getInstance().getTime();
 		long durationMillis = runEndDate.getTime() - runStartDate.getTime();
 		logger.info( "Run: end [" + fmt.format( runStartDate ) + " - " + fmt.format( runEndDate )
-				+ "] [" + durationMillis + "]" );
+		+ "] [" + durationMillis + "]" );
 	}
 }
