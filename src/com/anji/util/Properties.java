@@ -527,6 +527,7 @@ public class Properties extends java.util.Properties {
 	public Object newObjectProperty( String key ) {
 		try {
 			Class<?> cl = getClassProperty( key + CLASS_SUFFIX );
+			System.out.println("CLASS: "+cl);
 			Object result = cl.newInstance();
 			if ( result instanceof Configurable ) {
 				Configurable conf = (Configurable) result;

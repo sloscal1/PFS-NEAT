@@ -38,6 +38,7 @@ import java.util.TreeSet;
 
 import mil.af.rl.anji.NeatChromosomeUtility;
 import mil.af.rl.anji.NeatConfigurationAdapter;
+import mil.af.rl.novelty.SearchPartyEventListener;
 import mil.af.rl.predictive.EagerChromosomeSampleContainer;
 import mil.af.rl.predictive.PFSInfo;
 import mil.af.rl.predictive.PredictiveLearner;
@@ -72,7 +73,7 @@ import com.anji.util.Reset;
  * @author Steven Loscalzo modified for compatibility with PFS.
  */
 public class Evolver implements Configurable, PredictiveLearner {
-	
+
 	private static Logger logger = Logger.getLogger(Evolver.class);
 
 	//These are all keys for properties file info
@@ -86,7 +87,7 @@ public class Evolver implements Configurable, PredictiveLearner {
 	public static final String FITNESS_TARGET_KEY = "fitness.target";
 	/** the size of the number of inputs to the networks (at maximum) */
 	public static final String NUM_FEATURES = "stimulus.size";
-	
+
 	//State variables for this class
 	/** The configuration file */
 	private NeatConfiguration config = null;
@@ -169,7 +170,7 @@ public class Evolver implements Configurable, PredictiveLearner {
 				.newObjectProperty(FITNESS_FUNCTION_CLASS_KEY);
 		//Make sure the same object is used throughout
 		((ConcurrentFitnessFunction)fitnessFunc).setPFSInfo(info);
-		
+
 		config.getEventManager().addEventListener(
 				GeneticEvent.GENOTYPE_EVALUATED_EVENT, run);
 
@@ -179,6 +180,14 @@ public class Evolver implements Configurable, PredictiveLearner {
 				GeneticEvent.GENOTYPE_EVOLVED_EVENT, logListener);
 		config.getEventManager().addEventListener(
 				GeneticEvent.GENOTYPE_EVALUATED_EVENT, logListener);
+
+		// persistence
+		if(props.getBooleanProperty("use.searchparty", false)){
+			SearchPartyEventListener spListener = new SearchPartyEventListener();
+			spListener.init(props);
+			config.getEventManager().addEventListener(GeneticEvent.GENOTYPE_EVOLVED_EVENT,
+					spListener);
+		}
 
 		// persistence
 		PersistenceEventListener dbListener = new PersistenceEventListener(
@@ -204,7 +213,7 @@ public class Evolver implements Configurable, PredictiveLearner {
 		selectedFeatures = new LinkedHashMap<Integer, Integer>();
 		for (int i = 0; i < numFeatures; ++i)
 			selectedFeatures.put(i, i);
-		
+
 		if (geno != null) {
 			genotype = new GenotypeAdapter(geno, info);
 			logger.info("genotype from previous run");
@@ -365,7 +374,7 @@ public class Evolver implements Configurable, PredictiveLearner {
 		//Figure out what changes need to happen:
 		Set<Integer> additions = new LinkedHashSet<Integer>();
 		Set<Integer> deletions = new LinkedHashSet<Integer>();
-	
+
 		for (Integer key : mapping.keySet()) {
 			if (mapping.get(key) != SubspaceIdentification.UNUSED) {
 				if (selectedFeatures.get(key) == SubspaceIdentification.UNUSED)
