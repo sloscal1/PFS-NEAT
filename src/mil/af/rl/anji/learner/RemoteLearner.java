@@ -1,8 +1,10 @@
 package mil.af.rl.anji.learner;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.Scanner;
 
 import org.jgap.Chromosome;
 
@@ -47,10 +49,35 @@ public class RemoteLearner extends RL_Learner {
 		this.classPath = props.getProperty(REMOTELEARNER_CLASSPATH_KEY);
 		this.propsFileName = props.getProperty(REMOTELEARNER_PROPS_NAME_KEY);
 		
+		/**
+		 * This class simply loops on the child processes's error stream.
+		 * If an error occurs, the program quits.
+		 * @author sloscal1
+		 *
+		 */
+		final class ErrorHandler implements Runnable{
+			private InputStream is;
+			private ErrorHandler(InputStream is){
+				this.is = is;
+			}
+			
+			@Override
+			public void run() {
+				Scanner scan = new Scanner(is);
+				while(scan.hasNextLine()){
+					System.err.println(scan.nextLine());
+					if(!scan.hasNextLine())
+						break;
+				}
+				scan.close();
+				System.exit(1);
+			}
+		}
+		
 		ProcessBuilder pb = new ProcessBuilder("java", "-cp", classPath, mainClass, propsFileName);
-		pb.redirectErrorStream(true);
 		Process proc = pb.start();
 		results = new ObjectInputStream(proc.getInputStream());
+		new Thread(new ErrorHandler(proc.getErrorStream())).start();
 		netWriter = new ObjectOutputStream(proc.getOutputStream());
 		netWriter.flush();
 	}
