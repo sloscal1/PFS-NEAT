@@ -227,7 +227,8 @@ public class NoveltyGenotypeAdapter extends Genotype implements Serializable {
 		if(chromosomes == null)
 			return;
 
-		chromosomes.add(chrom);
+		chromosomes.add(new BehaviorChromosome(chrom.cloneMaterial(), chrom.getId()));
+		
 		//		if(chromosomes.size() != 0)
 		//			info.setFeatureMap(chrom, info.getFeatureMap(chromosomes.get(0)));
 		// specie collection

@@ -6,6 +6,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
+import org.jgap.BehaviorChromosome;
 import org.jgap.Chromosome;
 
 import com.anji.integration.ActivatorTranscriber;
@@ -101,6 +102,12 @@ public class RemoteLearner extends RL_Learner {
 			//Sim was started up in the init method, now has the network,
 			//get the results
 			fitness = (Integer)results.readObject();
+			double[] behavior = (double[])results.readObject();
+			//_SL_ 20160204: Don't like this solution, should avoid cast by changing the way
+			//the vector gets passed around.
+			if(chrom instanceof BehaviorChromosome)
+				((BehaviorChromosome)chrom).setBehaviorVector(behavior);
+				
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
