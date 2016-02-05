@@ -9,8 +9,10 @@ public class BehaviorChromosome extends Chromosome {
 	
 	private double[] behaviorVector;
 	
-	public BehaviorChromosome(ChromosomeMaterial arg0, Long arg1) {
-		super(arg0, arg1);
+	public BehaviorChromosome(Chromosome chrom) {
+		super(chrom.cloneMaterial(), chrom.getId());
+		this.setFitnessValue(chrom.getFitnessValue());
+		
 	}
 
 	public void setBehaviorVector(double[] behaviorVector){
