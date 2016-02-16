@@ -226,8 +226,9 @@ public class NoveltyGenotypeAdapter extends Genotype implements Serializable {
 		//
 		if(chromosomes == null)
 			return;
-
-		chromosomes.add(new BehaviorChromosome(chrom));
+		
+		BehaviorChromosome bc = new BehaviorChromosome(chrom);
+		chromosomes.add(bc);
 		
 		//		if(chromosomes.size() != 0)
 		//			info.setFeatureMap(chrom, info.getFeatureMap(chromosomes.get(0)));
@@ -237,14 +238,14 @@ public class NoveltyGenotypeAdapter extends Genotype implements Serializable {
 		Iterator<Specie> iter = species.iterator();
 		while (iter.hasNext() && !added) {
 			specie = iter.next();
-			if (specie.match(chrom)) {
-				specie.add(chrom);
+			if (specie.match(bc)) {
+				specie.add(bc);
 				added = true;
 			}
 		}
 		if (!added) {
 			specie = new Specie(activeConfiguration.getSpeciationParms(),
-					chrom);
+					bc);
 			species.add(specie);
 		}
 	}
