@@ -433,7 +433,9 @@ public class NoveltyGenotypeAdapter extends Genotype implements Serializable {
 		//Now put the fitness back so that other Genotype operations are not affected:
 		for(Chromosome chrom : chromosomes){
 			//The mutations would result in the new chromosomes not having a fitness, use their primary parent instead
-			int fitness = fitnessOnly.containsKey(chrom.getId()) ? fitnessOnly.get(chrom.getId()) : fitnessOnly.get(chrom.getPrimaryParentId()); 
+			// _DB_ 02/16/16 set fitness to default if no current fitness to avoid null pointer if no parent id
+			//int fitness = fitnessOnly.containsKey(chrom.getId()) ? fitnessOnly.get(chrom.getId()) : fitnessOnly.get(chrom.getPrimaryParentId()); 
+			int fitness = fitnessOnly.containsKey(chrom.getId()) ? fitnessOnly.get(chrom.getId()) : -1;
 			chrom.setFitnessValue(fitness);
 		}
 		//_SL_ 20151202 pulled out of onlyEvolve so that proper fitness is logged.

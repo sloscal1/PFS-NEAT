@@ -181,11 +181,12 @@ public class ConcurrentFitnessFunction implements BulkFitnessFunction, Configura
 	}
 
 	public void evaluate(Chromosome c, int id) {
-		if(c.getClass().getSimpleName().equals("Chromosome")){ //_SL_ 6/27/11 Don't want to do this for the subtask chromosome
+		//_DB_ 02/16/16  Doesn't matter for what we're doing with novelty
+		//if(c.getClass().getSimpleName().equals("Chromosome")){ //_SL_ 6/27/11 Don't want to do this for the subtask chromosome
 			StringBuilder sb = new StringBuilder(" Chromosome " + c.getId() + " Fitness=" + c.getFitnessValue() + " Primary Parent = " + c.getPrimaryParentId());
 			sb.append("  Completed in context:" + id);
 			System.out.println(sb.toString());
-		}
+		//}
 	}
 
 	/**
