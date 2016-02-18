@@ -3,8 +3,9 @@ package mil.af.rl.novelty;
 import java.util.List;
 
 import com.anji.util.Configurable;
+import com.anji.util.XmlPersistable;
 
-public interface NoveltyArchive extends Configurable{
+public interface NoveltyArchive extends Configurable, XmlPersistable{
 		/**
 	 * Put the given behavior vector into this archive, associated with the given id.
 	 * 

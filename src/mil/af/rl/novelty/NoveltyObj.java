@@ -55,4 +55,8 @@ public class NoveltyObj implements MultiObj, Configurable {
 		
 		return novelty;
 	}
+	
+	public NoveltyArchive getArchive(){
+		return archive;
+	}
 }

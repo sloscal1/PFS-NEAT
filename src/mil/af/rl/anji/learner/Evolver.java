@@ -38,6 +38,7 @@ import java.util.TreeSet;
 
 import mil.af.rl.anji.NeatChromosomeUtility;
 import mil.af.rl.anji.NeatConfigurationAdapter;
+import mil.af.rl.novelty.NoveltyArchivePersistenceEventListener;
 import mil.af.rl.novelty.SearchPartyEventListener;
 import mil.af.rl.predictive.EagerChromosomeSampleContainer;
 import mil.af.rl.predictive.PFSInfo;

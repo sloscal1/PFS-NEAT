@@ -80,7 +80,7 @@ public class FilePersistence extends com.anji.persistence.FilePersistence {
 	 * @param key
 	 * @return String resulting path
 	 */
-	protected String fullPath( String type, String key ) {
+	public String fullPath( String type, String key ) {
 		//Altered to use realBaseDir instead of baseDir
 		StringBuffer result = new StringBuffer( realBaseDir.getAbsolutePath() );
 		result.append( File.separatorChar ).append( type );

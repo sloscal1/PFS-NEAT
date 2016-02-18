@@ -34,6 +34,7 @@ import java.util.Map;
 import org.jgap.event.GeneticEvent;
 
 import mil.af.rl.novelty.MultiObj;
+import mil.af.rl.novelty.NoveltyArchive;
 import mil.af.rl.predictive.PFSInfo;
 
 /**
@@ -367,6 +368,10 @@ public class NoveltyGenotypeAdapter extends Genotype implements Serializable {
 		bulkFunction.evaluate(chrom);
 	}
 
+	public NoveltyArchive getArchive(){
+		return mo.getArchive();
+	}
+	
 	/**
 	 * Performs one generation cycle, evaluating fitness, selecting survivors,
 	 * repopulting with offspring, and mutating new population. This is a

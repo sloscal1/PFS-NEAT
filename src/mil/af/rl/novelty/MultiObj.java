@@ -17,4 +17,6 @@ public interface MultiObj {
 	 * @return a map with an integer fitness value associated with each Chromosome id in the input.
 	 */
 	Map<Long, Integer> measureObjective(List<Chromosome> chroms);
+	
+	NoveltyArchive getArchive();
 }

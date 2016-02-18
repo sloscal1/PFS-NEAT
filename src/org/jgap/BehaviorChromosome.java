@@ -11,8 +11,7 @@ public class BehaviorChromosome extends Chromosome {
 	
 	public BehaviorChromosome(Chromosome chrom) {
 		super(chrom.cloneMaterial(), chrom.getId());
-		this.setFitnessValue(chrom.getFitnessValue());
-		
+		this.setFitnessValue(chrom.getFitnessValue());		
 	}
 
 	public void setBehaviorVector(double[] behaviorVector){
@@ -21,5 +20,4 @@ public class BehaviorChromosome extends Chromosome {
 	public double[] getBehaviorVector(){
 		return behaviorVector.clone(); //Defensive copy...
 	}
-
 }

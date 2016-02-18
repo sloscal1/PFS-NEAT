@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Random;
 import java.util.Set;
 
@@ -21,7 +22,8 @@ import weka.core.neighboursearch.NearestNeighbourSearch;
 
 public class RandomSamplingNoveltyArchive implements NoveltyArchive{
 	public static final String RANDOM_FRAC_KEY = "novelty_archive.rand_frac";
-
+	public static final String XML_TAG = "noveltyarchive";
+	
 	/** The probability that a newly added point will be retained in the archive on an update */
 	private double frac = 0.02;
 	/** The source of randomness for the archive */
@@ -170,5 +172,29 @@ public class RandomSamplingNoveltyArchive implements NoveltyArchive{
 	public void init(Properties props) throws Exception {
 		rand = new Random(props.getLongProperty(RL_Learner.LEARNER_RANDOM_SEED_KEY));
 		frac = props.getDoubleProperty(RANDOM_FRAC_KEY);
+	}
+	
+	@Override
+	public String getXmld() {
+		return "randomsamplingnoveltyarchive";
+	}
+	
+	@Override
+	public String getXmlRootTag() {
+		return XML_TAG;
+	}
+	
+	@Override
+	public String toXml() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("<"+XML_TAG+">\n");
+			for(Entry<Long, Integer> entry : vectorMap.entrySet()){
+				sb.append("\t<entry>\n");
+				sb.append("\t\t<behaviorvector>"+data.get(entry.getValue())+"</behaviorvector>\n");
+				sb.append("\t\t<chrom_id>"+entry.getKey()+"</chrom_di>\n");
+				sb.append("\t</entry>\n");
+			}
+		sb.append("</"+XML_TAG+">");
+		return null;
 	}
 }

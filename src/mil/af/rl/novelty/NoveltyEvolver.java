@@ -19,6 +19,8 @@
  */
 package mil.af.rl.novelty;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -67,6 +69,7 @@ import com.anji.run.Run;
 import com.anji.util.Configurable;
 import com.anji.util.Properties;
 import com.anji.util.Reset;
+import com.anji.util.XmlPersistable;
 
 /**
  * Configures and performs an ANJI evolutionary run.
@@ -227,9 +230,14 @@ public class NoveltyEvolver implements Configurable, PredictiveLearner {
 				dbListener);
 		config.getEventManager().addEventListener(
 				GeneticEvent.GENOTYPE_EVALUATED_EVENT, dbListener);
-
+		config.getEventManager().addEventListener(GeneticEvent.RUN_COMPLETED_EVENT, dbListener);
+		
 		config.setBulkFitnessFunction(fitnessFunc);
 
+		NoveltyArchivePersistenceEventListener naListener = new NoveltyArchivePersistenceEventListener();
+		naListener.init(props);
+		config.getEventManager().addEventListener(GeneticEvent.RUN_COMPLETED_EVENT, naListener);
+		
 		maxFitness = config.getBulkFitnessFunction().getMaxFitnessValue();
 
 		// load population, either from previous run or random
@@ -542,7 +550,7 @@ public class NoveltyEvolver implements Configurable, PredictiveLearner {
 			+ " - " + fmt.format( generationEndDate ) + "] [" + durationMillis + "]" );
 		}
 
-		// run finish
+		// run finish		
 		config.getEventManager().fireGeneticEvent(
 				new GeneticEvent( GeneticEvent.RUN_COMPLETED_EVENT, genotype ) );
 		logConclusion( generationOfFirstSolution, champ );
